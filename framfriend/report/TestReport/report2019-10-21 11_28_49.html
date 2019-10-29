@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>framfriend sys测试报告</title>
+    <meta name="generator" content="HTMLTestReportCN 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 100%; }
+table       { font-size: 100%; }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">framfriend sys测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> 秋水</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-10-21 11:28:49</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:02:38.830400</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 35，通过 10，失败 1，错误 24，通过率= 28.57%</p>
+
+<p class='description'>处理器:Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz 2.20 GHz 内存:8G 系统类型: 64位 版本: windows 10 专业版</p>
+</div>
+
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(4)'>概要{ 28.57% }</a>
+<a class="btn btn-success" href='javascript:showCase(0)'>通过{ 10 }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
+<a class="btn btn-warning" href='javascript:showCase(2)'>错误{ 24 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 35 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center active" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='warning'>
+    <td>roleTc.role_TC: 角色模块测试用例</td>
+    <td class="text-center">35</td>
+    <td class="text-center">10</td>
+    <td class="text-center">1</td>
+    <td class="text-center">24</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',35)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_alone_query_: 按角色、表示位、描述单一条件查询</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_1' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_1'>通过</button></td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testaddrole_1: 为空新增角色验证</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_2' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_2'>通过</button></td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testaddrole_2: 角色为空验证</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_3' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_3'>通过</button></td>
+</tr>
+
+<tr id='pt1_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testaddrole_3: 表示位为空验证</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_4' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_4'>通过</button></td>
+</tr>
+
+<tr id='pt1_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testaddrole_4: 描述为空验证</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_5' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_5'>通过</button></td>
+</tr>
+
+<tr id='pt1_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testaddrole_5: 新增成功验证</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_6' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_6'>通过</button></td>
+</tr>
+
+<tr id='pt1_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testbuttonAssigned_1: 点击按钮分配</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_7' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_7'>通过</button></td>
+</tr>
+
+<tr id='pt1_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testbuttonAssigned_10: 新增按钮不输入图标点击提交按钮</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_8' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_8'>通过</button></td>
+</tr>
+
+<tr id='pt1_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testbuttonAssigned_11: 新增按钮不输入描述点击提交按钮</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_9' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_9'>通过</button></td>
+</tr>
+
+<tr id='pt1_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>testbuttonAssigned_12: 正常输入点击提交按钮</div></td>
+    <td colspan='5' align='center'><button id='btn_pt1_10' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_10'>通过</button></td>
+</tr>
+
+<tr id='ft1_11' class='none'>
+    <td class='failCase'><div class='testcase'>testbuttonAssigned_13: 点击修改按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_ft1_11' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_11'>失败</button>
+    <div id='div_ft1_11' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_ft1_11' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_ft1_11'>失败</button>
+    <div id='div_ft1_11' class="collapse in">
+    <pre>
+    
+ft1_11: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\roleTc.py", line 494, in testbuttonAssigned_13
+    self.assertTrue(msg13,'请选中一项内容！')
+AssertionError: False is not true : 请选中一项内容！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_12' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_13: 点击修改按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_12' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_12'>错误</button>
+    <div id='div_et1_12' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_12' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_12'>错误</button>
+    <div id='div_et1_12' class="collapse in">
+    <pre>
+    
+et1_12: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 43, in tearDown
+    self.driver.refresh()
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 831, in refresh
+    self.execute(Command.REFRESH)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_13' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_14: 选中多项点击修改按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_13' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_13'>错误</button>
+    <div id='div_et1_13' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_13' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_13'>错误</button>
+    <div id='div_et1_13' class="collapse in">
+    <pre>
+    
+et1_13: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_14' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_15: 选中一项点击修改按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_14' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_14'>错误</button>
+    <div id='div_et1_14' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_14' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_14'>错误</button>
+    <div id='div_et1_14' class="collapse in">
+    <pre>
+    
+et1_14: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_15' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_16: 修改清空按钮必填项点击提交验证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_15' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_15'>错误</button>
+    <div id='div_et1_15' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_15' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_15'>错误</button>
+    <div id='div_et1_15' class="collapse in">
+    <pre>
+    
+et1_15: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_16' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_17: 修改必填项点击提交验证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_16' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_16'>错误</button>
+    <div id='div_et1_16' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_16' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_16'>错误</button>
+    <div id='div_et1_16' class="collapse in">
+    <pre>
+    
+et1_16: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_17' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_18: 点击删除按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_17' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_17'>错误</button>
+    <div id='div_et1_17' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_17' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_17'>错误</button>
+    <div id='div_et1_17' class="collapse in">
+    <pre>
+    
+et1_17: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_18' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_19: 选中删除项点击删除按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_18' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_18'>错误</button>
+    <div id='div_et1_18' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_18' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_18'>错误</button>
+    <div id='div_et1_18' class="collapse in">
+    <pre>
+    
+et1_18: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_19' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_2: 选中多项点击按钮分配</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_19' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_19'>错误</button>
+    <div id='div_et1_19' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_19' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_19'>错误</button>
+    <div id='div_et1_19' class="collapse in">
+    <pre>
+    
+et1_19: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_20' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_20: 删除按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_20' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_20'>错误</button>
+    <div id='div_et1_20' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_20' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_20'>错误</button>
+    <div id='div_et1_20' class="collapse in">
+    <pre>
+    
+et1_20: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_21' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_21: 关闭按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_21' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_21'>错误</button>
+    <div id='div_et1_21' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_21' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_21'>错误</button>
+    <div id='div_et1_21' class="collapse in">
+    <pre>
+    
+et1_21: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_22' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_3: 选中一项点击按钮分配</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_22' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_22'>错误</button>
+    <div id='div_et1_22' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_22' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_22'>错误</button>
+    <div id='div_et1_22' class="collapse in">
+    <pre>
+    
+et1_22: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_23' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_4: 点击新增按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_23' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_23'>错误</button>
+    <div id='div_et1_23' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_23' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_23'>错误</button>
+    <div id='div_et1_23' class="collapse in">
+    <pre>
+    
+et1_23: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_24' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_5: 选中节点点击新增按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_24' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_24'>错误</button>
+    <div id='div_et1_24' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_24' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_24'>错误</button>
+    <div id='div_et1_24' class="collapse in">
+    <pre>
+    
+et1_24: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_25' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_6: 新增按钮不输入必填项点击提交按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_25' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_25'>错误</button>
+    <div id='div_et1_25' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_25' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_25'>错误</button>
+    <div id='div_et1_25' class="collapse in">
+    <pre>
+    
+et1_25: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_26' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_7: 新增按钮不输入按钮名称点击提交按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_26' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_26'>错误</button>
+    <div id='div_et1_26' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_26' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_26'>错误</button>
+    <div id='div_et1_26' class="collapse in">
+    <pre>
+    
+et1_26: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_27' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_8: 新增按钮不输入英文名称点击提交按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_27' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_27'>错误</button>
+    <div id='div_et1_27' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_27' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_27'>错误</button>
+    <div id='div_et1_27' class="collapse in">
+    <pre>
+    
+et1_27: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_28' class='none'>
+    <td class='errorCase'><div class='testcase'>testbuttonAssigned_9: 新增按钮不输入表示位点击提交按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_28' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_28'>错误</button>
+    <div id='div_et1_28' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_28' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_28'>错误</button>
+    <div id='div_et1_28' class="collapse in">
+    <pre>
+    
+et1_28: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_29' class='none'>
+    <td class='errorCase'><div class='testcase'>testmenuAssignment_1: 点击菜单分配</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_29' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_29'>错误</button>
+    <div id='div_et1_29' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_29' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_29'>错误</button>
+    <div id='div_et1_29' class="collapse in">
+    <pre>
+    
+et1_29: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_30' class='none'>
+    <td class='errorCase'><div class='testcase'>testmenuAssignment_2: 选中多项点击菜单分配</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_30' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_30'>错误</button>
+    <div id='div_et1_30' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_30' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_30'>错误</button>
+    <div id='div_et1_30' class="collapse in">
+    <pre>
+    
+et1_30: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_31' class='none'>
+    <td class='errorCase'><div class='testcase'>testmenuAssignment_3: 选中一项点击菜单分配</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_31' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_31'>错误</button>
+    <div id='div_et1_31' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_31' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_31'>错误</button>
+    <div id='div_et1_31' class="collapse in">
+    <pre>
+    
+et1_31: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_32' class='none'>
+    <td class='errorCase'><div class='testcase'>testupdaterole_1: 点击修改验证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_32' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_32'>错误</button>
+    <div id='div_et1_32' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_32' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_32'>错误</button>
+    <div id='div_et1_32' class="collapse in">
+    <pre>
+    
+et1_32: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_33' class='none'>
+    <td class='errorCase'><div class='testcase'>testupdaterole_2: 选中多项点击修改按钮</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_33' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_33'>错误</button>
+    <div id='div_et1_33' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_33' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_33'>错误</button>
+    <div id='div_et1_33' class="collapse in">
+    <pre>
+    
+et1_33: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_34' class='none'>
+    <td class='errorCase'><div class='testcase'>testupdaterole_3: 删除已有数据提交</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_34' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_34'>错误</button>
+    <div id='div_et1_34' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_34' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_34'>错误</button>
+    <div id='div_et1_34' class="collapse in">
+    <pre>
+    
+et1_34: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_35' class='none'>
+    <td class='errorCase'><div class='testcase'>testupdaterole_4: 修改必填项验证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_35' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_35'>错误</button>
+    <div id='div_et1_35' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_35' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_35'>错误</button>
+    <div id='div_et1_35' class="collapse in">
+    <pre>
+    
+et1_35: Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 48, in _open
+    self.driver.get(url)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : 123456}
+  (Session info: chrome=70.0.3538.67)
+  (Driver info: chromedriver=70.0.3538.67 (9ab0cfab84ded083718d3a4ff830726efd38869f),platform=Windows NT 10.0.18362 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\models\myunit.py", line 35, in setUp
+    self.login.open()
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 62, in open
+    self._open(self.base_url)
+  File "E:\python_test\framfriend_Test_Project\framfriend\test_case\page_obj\base_page.py", line 52, in _open
+    raise ValueError('%s address access error, please check！' %url)
+ValueError: http://localhost:8081/farmfriend/login/main.do address access error, please check！
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center info">
+    <td>总计</td>
+    <td>35</td>
+    <td>10</td>
+    <td>1</td>
+    <td>24</td>
+    <td>通过率：28.57%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+<script language="javascript" type="text/javascript">
+output_list = Array();
+// 修改按钮颜色显示错误问题 --Findyou v0.8.2.3
+
+$("button[id^='btn_pt']").addClass("btn btn-success");
+$("button[id^='btn_ft']").addClass("btn btn-danger");
+$("button[id^='btn_et']").addClass("btn btn-warning");
+
+/*level
+增加分类并调整，增加error按钮事件 --Findyou v0.8.2.3
+0:Pass    //pt none, ft hiddenRow, et hiddenRow
+1:Failed  //pt hiddenRow, ft none, et hiddenRow
+2:Error    //pt hiddenRow, ft hiddenRow, et none
+3:All     //pt none, ft none, et none
+4:Summary //all hiddenRow
+*/
+
+//add Error button event --Findyou v0.8.2.3
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 0 || level == 2 || level == 4 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level == 1 || level == 2 || level == 4) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'et') {
+            if (level == 0 || level == 1 || level == 4) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+//add Error button event --Findyou v0.8.2.3
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        if (!tr) {
+            tid = 'e' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+</body>
+</html>
