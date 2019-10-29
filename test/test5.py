@@ -1,4 +1,4 @@
-#coding=utf8
+
 import requests
 import queue  #Queue模块中提供了同步的、线程安全的队列类，包括
                      #FIFO（先入先出)队列Queue，LIFO（后入先出）队列

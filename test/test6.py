@@ -7,7 +7,7 @@ from multiprocessing import Pool
 data = {
     "times": 10, # 并发量
     "method": "POST",
-    "url": "http://47.98.52.20:8080/farmfriend/login/main.do",
+    "url": "http://localhost:8080/user/listUser",
     "header": {
         "Content-Type": "application/json",
         "user-agent": "python-mock/0.0.1"
