@@ -1,5 +1,7 @@
+#coding=utf8
 import requests
 import unittest
+import warnings
 
 class sampleTest(unittest.TestCase):
 
@@ -100,7 +102,67 @@ class HeadersTest(unittest.TestCase):
         r = requests.post('http://127.0.0.1:5000/header',headers=headers)
         result = r.json()
         print(result)
+class AuthTest(unittest.TestCase):
+    def test_auth_none(self):
+        r = requests.post('http://127.0.0.1:5000/auth')
+        result = r.json()
+        print(result)
 
+    def test_auth_null(self):
+        auth = ('','')
+        r = requests.post('http://127.0.0.1:5000/auth',auth=auth)
+        result = r.json()
+        print(result)
+
+    def test_auth_fail(self):
+        auth = ('abc','123')
+        r = requests.post('http://127.0.0.1:5000/auth',auth=auth)
+        result = r.json()
+        print(result)
+
+    def test_auth_success(self):
+        auth = ('admin','admin123')
+        r = requests.post('http://127.0.0.1:5000/auth',auth=auth)
+        result = r.json()
+        print(result)
+
+class UploadFileTest(unittest.TestCase):
+
+    def test_sample(self):
+        warnings.simplefilter("ignore", ResourceWarning)#通过warnings库来忽略掉相关告警
+        files = {'file':open("D:\\log.txt", 'rb')}
+        r = requests.post("http://127.0.0.1:5000/upload", files=files)
+        result = r.json()
+        print(result)
+
+class MoreMethodTest(unittest.TestCase):
+
+    def test_get_method(self):
+        r = requests.get("http://127.0.0.1:5000/phone/1")
+        result = r.json()
+        print(result)
+
+    def test_put_method(self):
+        data = {"name":"华为手机","price":"3999"}
+        r = requests.put("http://127.0.0.1:5000/phone/1",data=data)
+        result = r.json()
+        print(result)
+
+    def test_delete_method(self):
+        r = requests.delete("http://127.0.0.1:5000/phone/1")
+        result = r.json()
+        print(result)
+
+class SessionTest(unittest.TestCase):
+
+    def test_sample(self):
+        s = requests.Session()
+        r = s.post("http://127.0.0.1:5000/user_login",data={"username":"jack","password":"123"})
+        result = r.json()
+        print(result)
+        r2 = s.get("http://127.0.0.1:5000/user_data")
+        result2 = r2.json()
+        print(result2)
 
 if __name__ == '__main__':
     unittest.main()
