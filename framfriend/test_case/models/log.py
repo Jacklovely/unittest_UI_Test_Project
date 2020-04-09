@@ -22,7 +22,7 @@ class Logger(object):
         # 日志文件名称
         # self.LogFileName = os.path.join(conf.log_path, "{0}.log".format(time.strftime("%Y-%m-%d")))# %H_%M_%S
         currTime = time.strftime("%Y-%m-%d")
-        self.LogFileName = r'E:\python_test\framfriend_Test_Project\framfriend\report\Log\log'+currTime+'.log'
+        self.LogFileName = r'F:\python_test\framfriend_Test_Project\framfriend\report\Log\log'+currTime+'.log'
         # 设置控制台输出
         # sh = logging.StreamHandler()
         # sh.setFormatter(fmt)

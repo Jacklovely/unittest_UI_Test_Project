@@ -5,14 +5,14 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.messagereceiver_page import messagereceiver_page
+from framfriend.test_case.page_obj.messagereceiver_page import MessagerEceiver_Page
 
-class messagereceiver_Tc(MyunitTest):
+class MessagerEceiver_Tc(MyunitTest):
     '''预警短信接收人模块用例'''
 
     def test_alone_query_1(self):
         """姓名，备注单一条件查询"""
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -30,7 +30,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_1(self):
         '''点击新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -41,7 +41,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_2(self):
         '''为空新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -57,7 +57,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_3(self):
         '''不输入姓名新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -70,7 +70,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_4(self):
         '''不输入手机号新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -85,7 +85,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_5(self):
         '''输入不规则手机号新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -99,7 +99,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_6(self):
         '''正常新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -114,7 +114,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_add_receiver_7(self):
         '''正常新增接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -125,7 +125,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_1(self):
         '''点击修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -136,7 +136,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_2(self):
         '''全选点击修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -148,7 +148,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_3(self):
         '''选择一项点击修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -160,7 +160,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_4(self):
         '''为空修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -179,7 +179,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_5(self):
         '''不输入姓名修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -195,7 +195,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_6(self):
         '''不输入手机号修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -211,7 +211,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_7(self):
         '''不输入备注修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -227,7 +227,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_8(self):
         '''输入不规则手机号修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -244,7 +244,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_9(self):
         '''正常修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -261,7 +261,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_update_receiver_10(self):
         '''关闭修改接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -273,7 +273,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_delete_receiver_1(self):
         '''点击删除接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -284,7 +284,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_delete_receiver_2(self):
         '''删除接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -296,7 +296,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_delete_receiver_3(self):
         '''删除接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -308,7 +308,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_delete_receiver_4(self):
         '''确定删除接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)
@@ -321,7 +321,7 @@ class messagereceiver_Tc(MyunitTest):
 
     def test_delete_receiver_5(self):
         '''取消删除接收人'''
-        menu = messagereceiver_page(self.driver)  # 实例化预警短信接收人页面
+        menu = MessagerEceiver_Page(self.driver)  # 实例化预警短信接收人页面
         self.login.loginFunc()  # 登录
         menu.inmessagereceiverpage()  # 进入预警短信接收人页面
         time.sleep(3)

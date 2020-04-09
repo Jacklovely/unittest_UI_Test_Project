@@ -8,13 +8,13 @@ import time
 from selenium.webdriver.support.select import Select
 
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.detailaccount_page import detailaccount_page
-class executivecondition_Tc(MyunitTest):
+from framfriend.test_case.page_obj.detailaccount_page import DetailAccount_Page
+class DetailAccount_Tc(MyunitTest):
     '''执行明细账用例'''
 
     def test_alone_query_1(self):
         """合同号，合同名称，客户名称，合同年限单一条件查询"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -33,7 +33,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_account_query_2(self):
         """签订时间查询"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -54,7 +54,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_account_query_3(self):
         """经手人查询"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -77,7 +77,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_years_query_4(self):
         """合同年限查询"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -100,7 +100,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_handledby(self):
         """遍历经手人选项"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -117,7 +117,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_paymentstatus(self):
         """遍历收款状态选项"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)
@@ -134,7 +134,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_detail_check(self):
         """明细查看"""
-        menu = detailaccount_page(self.driver)  # 实例化明细账页面
+        menu = DetailAccount_Page(self.driver)  # 实例化明细账页面
         self.login.loginFunc()  # 登录
         menu.indetailaccountpage()  # 进入明细账页面
         time.sleep(3)

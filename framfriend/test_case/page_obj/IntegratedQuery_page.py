@@ -1,5 +1,5 @@
 '''
-Code description： IntegratedQuery_page
+Code description： IntegratedQuery_Page
 Create time：
 Developer：
 '''
@@ -12,9 +12,9 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class IntegratedQuery_page(BasePage):
+class IntegratedQuery_Page(BasePage):
     '''
-    综合查询
+    转账查询
     '''
     # 银农直联系统
     Silverfarmers = (By.XPATH, eleData.readExcel(14, 3))

@@ -1,5 +1,5 @@
 '''
-Code description： detailQuery_page
+Code description： DetailQuery_Page
 Create time：
 Developer：
 '''
@@ -12,9 +12,9 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class detailQuery_page(BasePage):
+class DetailQuery_Page(BasePage):
     '''
-    综合查询
+    银行流水查询
     '''
     # 银农直联系统
     Silverfarmers = (By.XPATH, eleData.readExcel(14, 3))
@@ -46,7 +46,7 @@ class detailQuery_page(BasePage):
         leftMenu.find_element_by_id('sidebarTree_23_a').click()  # 点击银农直联系统
         time.sleep(1)
         Silverfarmersul = self.findElement(*self.Silverfarmersul)
-        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_32_span"]').click()  # 点击综合查询
+        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_36_span"]').click()  # 点击综合查询
         time.sleep(1)
         log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
             sys._getframe().f_code.co_name, self.menuList[0], self.Silverfarmersul))

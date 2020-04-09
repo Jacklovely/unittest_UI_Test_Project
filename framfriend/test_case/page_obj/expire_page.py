@@ -1,5 +1,5 @@
 '''
-Code description： expire_page
+Code description： Expire_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class expire_page(BasePage):
+class Expire_Page(BasePage):
     '''
         到期提醒
     '''

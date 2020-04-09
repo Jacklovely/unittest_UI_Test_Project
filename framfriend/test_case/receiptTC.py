@@ -5,14 +5,14 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.receipt_page import receipt_page
+from framfriend.test_case.page_obj.receipt_page import Receipt_Page
 
-class receipt_Tc(MyunitTest):
+class Receipt_Tc(MyunitTest):
     '''合同收款模块用例'''
 
     def test_alone_query_1(self):
         """合同号，合同名称，客户名称，经办人单一条件查询"""
-        menu = receipt_page(self.driver)  # 实例化合同收款页面
+        menu = Receipt_Page(self.driver)  # 实例化合同收款页面
         self.login.loginFunc()  # 登录
         menu.inreceiptpage()  # 进入合同收款页面
         time.sleep(3)
@@ -30,7 +30,7 @@ class receipt_Tc(MyunitTest):
 
     def test_alone_query_2(self):
         """签订时间查询"""
-        menu = receipt_page(self.driver)  # 实例化合同收款页面
+        menu = Receipt_Page(self.driver)  # 实例化合同收款页面
         self.login.loginFunc()  # 登录
         menu.inreceiptpage()  # 进入合同收款页面
         time.sleep(3)
@@ -49,7 +49,7 @@ class receipt_Tc(MyunitTest):
 
     def test_check_contract_1(self):
         '''点击查看明细'''
-        menu = receipt_page(self.driver)  # 实例化合同收款页面
+        menu = Receipt_Page(self.driver)  # 实例化合同收款页面
         self.login.loginFunc()  # 登录
         menu.inreceiptpage()  # 进入合同收款页面
         time.sleep(3)
@@ -60,7 +60,7 @@ class receipt_Tc(MyunitTest):
 
     def test_check_contract_2(self):
         '''全选点击查看明细'''
-        menu = receipt_page(self.driver)  # 实例化合同收款页面
+        menu = Receipt_Page(self.driver)  # 实例化合同收款页面
         self.login.loginFunc()  # 登录
         menu.inreceiptpage()  # 进入合同收款页面
         time.sleep(3)
@@ -72,7 +72,7 @@ class receipt_Tc(MyunitTest):
 
     def test_check_contract_3(self):
         '''选择一项点击查看明细'''
-        menu = receipt_page(self.driver)  # 实例化合同收款页面
+        menu = Receipt_Page(self.driver)  # 实例化合同收款页面
         self.login.loginFunc()  # 登录
         menu.inreceiptpage()  # 进入合同收款页面
         time.sleep(3)

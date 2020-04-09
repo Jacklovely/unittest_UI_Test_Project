@@ -9,7 +9,7 @@ import time
 import logging
 import unittest
 from BeautifulReport import BeautifulReport
-import HTMLTestRunner
+from package.HTMLTestRunner import HTMLTestRunner
 from framfriend.config import conf
 from framfriend.test_case.models.log import Logger
 

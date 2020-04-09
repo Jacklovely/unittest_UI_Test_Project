@@ -1,5 +1,5 @@
 '''
-Code description： detailaccount_page
+Code description： DetailAccount_Page
 Create time：
 Developer：
 '''
@@ -15,7 +15,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class detailaccount_page(BasePage):
+class DetailAccount_Page(BasePage):
     '''
         明细账
     '''

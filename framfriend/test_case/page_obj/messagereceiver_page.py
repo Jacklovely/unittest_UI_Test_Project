@@ -1,5 +1,5 @@
 '''
-Code description： Messagereceiver_page
+Code description： MessagerEceiver_Page
 Create time：
 Developer：
 '''
@@ -15,7 +15,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class messagereceiver_page(BasePage):
+class MessagerEceiver_Page(BasePage):
     '''
         预警短信接收人
     '''

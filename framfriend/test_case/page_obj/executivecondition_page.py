@@ -1,5 +1,5 @@
 '''
-Code description： executivecondition_page
+Code description： ExecutiveCondition_Page
 Create time：
 Developer：
 '''
@@ -15,7 +15,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class executivecondition_page(BasePage):
+class ExecutiveCondition_Page(BasePage):
     '''
         执行情况
     '''

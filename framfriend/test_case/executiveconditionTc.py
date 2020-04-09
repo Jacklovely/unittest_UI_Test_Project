@@ -5,13 +5,13 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.executivecondition_page import executivecondition_page
+from framfriend.test_case.page_obj.executivecondition_page import ExecutiveCondition_Page
 
-class executivecondition_Tc(MyunitTest):
+class ExecutiveCondition_Tc(MyunitTest):
     '''执行情况模块用例'''
     def test_contract_query_1(self):
         '''查询'''
-        menu = executivecondition_page(self.driver)  # 实例化执行情况页面
+        menu = ExecutiveCondition_Page(self.driver)  # 实例化执行情况页面
         self.login.loginFunc()  # 登录
         menu.inexecutiveconditionpage()  # 进入执行情况页面
         time.sleep(2)
@@ -27,7 +27,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_click_detail_1(self):
         '''点击明细'''
-        menu = executivecondition_page(self.driver)  # 实例化执行情况页面
+        menu = ExecutiveCondition_Page(self.driver)  # 实例化执行情况页面
         self.login.loginFunc()  # 登录
         menu.inexecutiveconditionpage()  # 进入执行情况页面
         time.sleep(2)
@@ -39,7 +39,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_click_detail_2(self):
         '''全选点击明细'''
-        menu = executivecondition_page(self.driver)  # 实例化执行情况页面
+        menu = ExecutiveCondition_Page(self.driver)  # 实例化执行情况页面
         self.login.loginFunc()  # 登录
         menu.inexecutiveconditionpage()  # 进入执行情况页面
         time.sleep(2)
@@ -52,7 +52,7 @@ class executivecondition_Tc(MyunitTest):
 
     def test_click_detail_3(self):
         '''选择一项点击明细'''
-        menu = executivecondition_page(self.driver)  # 实例化执行情况页面
+        menu = ExecutiveCondition_Page(self.driver)  # 实例化执行情况页面
         self.login.loginFunc()  # 登录
         menu.inexecutiveconditionpage()  # 进入执行情况页面
         time.sleep(2)

@@ -11,7 +11,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 from framfriend.test_case.models.log import Logger
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class rolePage(BasePage):
+class RolePage(BasePage):
     '''
         角色管理
     '''
@@ -24,7 +24,7 @@ class rolePage(BasePage):
     # 基础功能列表
     functionList = (By.ID, eleData.readExcel(18, 3))
     # 角色管理页面
-    rolepage = (By.XPATH, eleData.readExcel(119, 3))
+    RolePage = (By.XPATH, eleData.readExcel(119, 3))
     # 查询条件 角色,表示位,描述
     query_list = [(By.XPATH, eleData.readExcel(120, 3)), (By.XPATH, eleData.readExcel(121, 3)),
                   (By.XPATH, eleData.readExcel(122, 3))]
@@ -106,7 +106,7 @@ class rolePage(BasePage):
           (By.XPATH, eleData.readExcel(188, 3)),#修改描述为空提示32
           (By.XPATH, eleData.readExcel(189, 3))]#关闭按钮分配验证33
 
-    def inrolePage(self):
+    def inRolePage(self):
         '''
         进入角色管理页面
         :return:

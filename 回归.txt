@@ -1,0 +1,10 @@
+payTC   Pay_Page  单笔转账
+transferTc Transfer_Page 批量转账
+IntegratedQueryTC IntegratedQuery_Page 转账查询
+batchresultsTc   BatchResults_Page     批量转账查询
+detailQuery_Tc   DetailQuery_Page    银行名片查询
+issuingTc         Issuing_Page   母子代付
+
+
+
+

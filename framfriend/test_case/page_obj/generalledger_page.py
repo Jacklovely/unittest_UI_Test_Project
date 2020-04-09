@@ -1,5 +1,5 @@
 '''
-Code description： generalledger_page
+Code description： GeneralLedger_Page
 Create time：
 Developer：
 '''
@@ -15,7 +15,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class generalledger_page(BasePage):
+class GeneralLedger_Page(BasePage):
     '''
         总账
     '''

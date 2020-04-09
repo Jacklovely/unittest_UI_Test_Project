@@ -6,16 +6,16 @@ Developer：
 
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.jg_page import jg
+from framfriend.test_case.page_obj.jg_page import Jg
 
-class jg_TC(MyunitTest):
+class Jg_TC(MyunitTest):
     """机构模块测试用例"""
 
     #直接点击新增
-    def test_addjg_1(self):
-        menu = jg(self.driver)# 实例化机构管理页面
+    def test_addJg_1(self):
+        menu = Jg(self.driver)# 实例化机构管理页面
         self.login.loginFunc()#登录
-        menu.jgPage()#进入机构管理页面
+        menu.JgPage()#进入机构管理页面
         menu.cBtn(menu.addBtn)#点击新增
         msg = menu.isElementExist(menu.adderr)#提示新增
         self.assertTrue(msg,'弹出提示信息')
@@ -24,10 +24,10 @@ class jg_TC(MyunitTest):
             self.assertEqual(msgInfo,'×\n提示! 请先选中节点进行新增','提示信息正确')
 
     #直接点击修改
-    def test_updatejg_2(self):
-        menu = jg(self.driver)#实例化页面
+    def test_updateJg_2(self):
+        menu = Jg(self.driver)#实例化页面
         self.login.loginFunc()#登录
-        menu.jgPage()#进入页面
+        menu.JgPage()#进入页面
         menu.cBtn(menu.updateBtn)#点击修改
         msg = menu.isElementExist(menu.updateerr)
         self.assertTrue(msg,'弹出提示信息')
@@ -36,10 +36,10 @@ class jg_TC(MyunitTest):
             self.assertEqual(msgInfo,'×\n提示! 请先选中节点进行修改','提示信息正确')
 
     #直接点击删除
-    def test_deletejg_3(self):
-        menu = jg(self.driver)
+    def test_deleteJg_3(self):
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.deleteBtn)
         msg = menu.isElementExist(menu.deleteerr)
         self.assertTrue(msg,'弹出提示信息')
@@ -49,17 +49,17 @@ class jg_TC(MyunitTest):
 
     #点击所有机构
     def test_treeBtn_4(self):
-        menu = jg(self.driver)
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.treeBtn)
         time.sleep(3)
 
     #为空新增
-    def test_addnulljg_5(self):
-        menu = jg(self.driver)
+    def test_addnullJg_5(self):
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.treeBtn)
         menu.cBtn(menu.addBtn)
         menu.cBtn(menu.addsubmitBtn)
@@ -70,10 +70,10 @@ class jg_TC(MyunitTest):
             self.assertEqual(msgInfo, '不能为空', '提示信息正确')
 
     #不为空新增
-    def test_addjg1_6(self):
-        menu = jg(self.driver)
+    def test_addJg1_6(self):
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.treeBtn)
         menu.cBtn(menu.addBtn)
         time.sleep(2)
@@ -88,9 +88,9 @@ class jg_TC(MyunitTest):
 
     #修改为空提交
     def test_updatenull_7(self):
-        menu = jg(self.driver)
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.tree)
         menu.cBtn(menu.updatedate)
         menu.cBtn(menu.updateBtn)
@@ -106,9 +106,9 @@ class jg_TC(MyunitTest):
 
      #修改机构名称
     def test_updatedata_8(self):
-        menu = jg(self.driver)
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.tree)
         menu.cBtn(menu.updatedate)
         menu.cBtn(menu.updateBtn)
@@ -124,9 +124,9 @@ class jg_TC(MyunitTest):
 
     #删除机构
     def test_deletedata_9(self):
-        menu = jg(self.driver)
+        menu = Jg(self.driver)
         self.login.loginFunc()
-        menu.jgPage()
+        menu.JgPage()
         menu.cBtn(menu.tree)
         menu.cBtn(menu.deletedate)
         menu.cBtn(menu.deleteBtn)

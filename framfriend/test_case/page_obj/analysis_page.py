@@ -1,5 +1,5 @@
 '''
-Code description： analysis_page
+Code description： Analysis_Page
 Create time：
 Developer：
 '''
@@ -15,7 +15,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class analysis_page(BasePage):
+class Analysis_Page(BasePage):
     '''
         年限分析
     '''

@@ -8,14 +8,14 @@ import time
 
 from selenium.webdriver.support.select import Select
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.register_page import register_page
+from framfriend.test_case.page_obj.register_page import Register_Page
 
-class register_Tc(MyunitTest):
+class Register_Tc(MyunitTest):
     '''合同登记模块用例'''
 
     def test_add_node_1(self):
         '''点击新增节点'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -25,7 +25,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_2(self):
         '''为空新增节点'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -40,7 +40,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_3(self):
         '''不输入节点名称新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -53,7 +53,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_4(self):
         '''不输入短信接收人新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -66,7 +66,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_5(self):
         '''不输入短信接收人手机号新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -79,7 +79,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_6(self):
         '''输入不规则短信接收人手机号新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -93,7 +93,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_7(self):
         '''输入正确信息新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -110,7 +110,7 @@ class register_Tc(MyunitTest):
 
     def test_add_node_8(self):
         '''取消新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -121,7 +121,7 @@ class register_Tc(MyunitTest):
 
     def test_update_node_1(self):
         '''点击修改验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -132,7 +132,7 @@ class register_Tc(MyunitTest):
 
     def test_update_node_2(self):
         '''选择节点点击修改验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -147,7 +147,7 @@ class register_Tc(MyunitTest):
 
     def test_update_node_3(self):
         '''修改清空已填内容提交验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -164,7 +164,7 @@ class register_Tc(MyunitTest):
 
     def test_update_node_4(self):
         '''正确修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -187,7 +187,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_node_1(self):
         '''点击删除验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -198,7 +198,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_node_2(self):
         '''选择节点点击删除验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -213,7 +213,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_node_3(self):
         '''选择节点点击删除确定验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -229,7 +229,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_node_4(self):
         '''选择节点点击删除取消验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -244,7 +244,7 @@ class register_Tc(MyunitTest):
 
     def test_alone_query_1(self):
         """合同号，合同名称，客户名称，经办人单一条件查询"""
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -262,7 +262,7 @@ class register_Tc(MyunitTest):
                     self.assertNotIn('03022', flag, '输入的查询条件无效')
 
     def test_time_query_2(self):
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -281,7 +281,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_1(self):
         '''点击新增合同按钮'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -292,7 +292,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_2(self):
         '''选择节点点击新增合同按钮'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -306,7 +306,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_3(self):
         '''为空新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -344,7 +344,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_4(self):
         '''不输入合同编号新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -381,7 +381,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_5(self):
         '''不输入合同名称新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -418,7 +418,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_6(self):
         '''不输入客户名称新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -455,7 +455,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_7(self):
         '''不输入签订时间新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -488,7 +488,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_8(self):
         '''不输入租赁年限新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -521,7 +521,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_9(self):
         '''不输入租赁年限止新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -556,7 +556,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_10(self):
         '''不输入承租方新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -594,7 +594,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_11(self):
         '''不输入合同总额新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -632,7 +632,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_12(self):
         '''不输入收款金额新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -670,7 +670,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_13(self):
         '''不输入收款日期新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -708,7 +708,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_14(self):
         '''不输入合同年限新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -746,7 +746,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_15(self):
         '''不输入经营方式新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -784,7 +784,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_16(self):
         '''不输入账号新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -822,7 +822,7 @@ class register_Tc(MyunitTest):
 
     def test_addtraversaltype(self):
         '''遍历合同类型选项'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -840,7 +840,7 @@ class register_Tc(MyunitTest):
 
     def test_addtraversalcontractsubject(self):
         '''遍历合同主体选项'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -861,7 +861,7 @@ class register_Tc(MyunitTest):
 
     def test_tender(self):
         '''遍历招标方式选项'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -882,7 +882,7 @@ class register_Tc(MyunitTest):
 
     def test_tender(self):
         '''遍历收款方式选项'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -902,7 +902,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_17(self):
         '''输入不规则合同总额新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -918,7 +918,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_18(self):
         '''输入不规则收款金额新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -934,7 +934,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_19(self):
         '''输入不规则账号新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -950,7 +950,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_20(self):
         '''收款方式自定义'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -970,7 +970,7 @@ class register_Tc(MyunitTest):
 
     def test_add_detail_21(self):
         '''明细不完整'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -985,7 +985,7 @@ class register_Tc(MyunitTest):
 
     def test_add_uploadimage_22(self):
         '''上传图片'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1000,7 +1000,7 @@ class register_Tc(MyunitTest):
 
     def test_add_deleteimage_23(self):
         '''上传图片删除'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1016,7 +1016,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_24(self):
         '''成功新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1054,7 +1054,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_25(self):
         '''合同号重复新增提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1092,7 +1092,7 @@ class register_Tc(MyunitTest):
 
     def test_add_contract_26(self):
         '''取消新增'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1106,7 +1106,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_1(self):
         '''点击修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1117,7 +1117,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_2(self):
         '''全选点击修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1132,7 +1132,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_3(self):
         '''选择一项点击修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1147,7 +1147,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_4(self):
         '''修改清空必填项提交'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1193,7 +1193,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_5(self):
         '''修改总金额非数字验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1209,7 +1209,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_6(self):
         '''修改合同账号非数字验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1225,7 +1225,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_7(self):
         '''修改收款金额非数字验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1241,7 +1241,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_8(self):
         '''合同明细不完整验证'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1258,7 +1258,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_9(self):
         '''修改上传图片'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1274,7 +1274,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_10(self):
         '''修改上传图片删除'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1291,7 +1291,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_11(self):
         '''正常修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1331,7 +1331,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_12(self):
         '''合同编号重复修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1370,7 +1370,7 @@ class register_Tc(MyunitTest):
 
     def test_update_contract_13(self):
         '''取消修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1385,7 +1385,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_1(self):
         '''点击查看明细'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1396,7 +1396,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_2(self):
         '''全选点击查看明细'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1411,7 +1411,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_3(self):
         '''选择一项点击查看明细'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1425,7 +1425,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_4(self):
         '''查看明细刷新'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1441,7 +1441,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_5(self):
         '''查看明细修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1458,7 +1458,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_6(self):
         '''全选查看明细修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1476,7 +1476,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_7(self):
         '''全选查看明细修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1493,7 +1493,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_8(self):
         '''遍历明细修改状态选项'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1519,7 +1519,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_9(self):
         '''明细修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1543,7 +1543,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_10(self):
         '''关闭明细修改'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1561,7 +1561,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_11(self):
         '''关闭明细'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1576,7 +1576,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_12(self):
         '''点击明细2'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1587,7 +1587,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_13(self):
         '''全选点击明细2'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1602,7 +1602,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_14(self):
         '''选择一项点击明细2'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1616,7 +1616,7 @@ class register_Tc(MyunitTest):
 
     def test_check_contract_15(self):
         '''选择一项点击明细2关闭'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1631,7 +1631,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_contract_1(self):
         '''点击删除按钮'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1642,7 +1642,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_contract_2(self):
         '''选择删除项删除'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1658,7 +1658,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_contract_3(self):
         '''选择删除项确定删除'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1676,7 +1676,7 @@ class register_Tc(MyunitTest):
 
     def test_delete_contract_4(self):
         '''选择删除项确定删除'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1693,7 +1693,7 @@ class register_Tc(MyunitTest):
 
     def test_export_contract(self):
         '''模板导出'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1703,7 +1703,7 @@ class register_Tc(MyunitTest):
 
     def test_import_contract_1(self):
         '''点击数据导入'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1713,7 +1713,7 @@ class register_Tc(MyunitTest):
 
     def test_import_contract_2(self):
         '''不选择文件上传'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1725,7 +1725,7 @@ class register_Tc(MyunitTest):
 
     def test_import_contract_3(self):
         '''取消文件上传'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1736,7 +1736,7 @@ class register_Tc(MyunitTest):
 
     def test_import_contract_4(self):
         '''错误文件上传'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
@@ -1749,7 +1749,7 @@ class register_Tc(MyunitTest):
 
     def test_import_contract_99(self):
         '''正确文件上传'''
-        menu = register_page(self.driver)  # 实例化合同登记页面
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)

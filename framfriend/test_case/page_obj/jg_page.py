@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from framfriend.test_case.page_obj.base_page import  BasePage, eleData
 from framfriend.test_case.models.log import Logger
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
-class jg(BasePage):
+class Jg(BasePage):
     '''
 
     '''
@@ -16,9 +16,9 @@ class jg(BasePage):
     #基础功能列表
     functionList = (By.ID, eleData.readExcel(18, 3))
     #机构管理
-    jggl = (By.ID, eleData.readExcel(19, 3))
+    Jggl = (By.ID, eleData.readExcel(19, 3))
     #机构页面
-    jgPage = (By.XPATH, eleData.readExcel(24, 3))
+    JgPage = (By.XPATH, eleData.readExcel(24, 3))
     #新增机构按钮
     addBtn = (By.ID, eleData.readExcel(25, 3))
     #修改机构按钮
@@ -33,7 +33,7 @@ class jg(BasePage):
     #新增机构信息
     addmsg = (By.XPATH, eleData.readExcel(30, 3))
     #机构名称输入框（新增）
-    #addjgname = (By.XPATH, eleData.readExcel(31, 3))
+    #addJgname = (By.XPATH, eleData.readExcel(31, 3))
     #为空信息提示
     msg = (By.XPATH, eleData.readExcel(32, 3))
     #提交按钮
@@ -45,7 +45,7 @@ class jg(BasePage):
     #机构修改信息
     updatemsg = (By.XPATH,eleData.readExcel(36,3))
     #机构名称输入框（修改）
-    #updatejgname = (By.XPATH,eleData.readExcel(37,3))
+    #updateJgname = (By.XPATH,eleData.readExcel(37,3))
     #修改为空提示
     updatenullmsg = (By.XPATH,'//*[@id="upDateForm"]/div/div/small')
     #提交按钮（修改）
@@ -83,7 +83,7 @@ class jg(BasePage):
     #valueListupdate = [reason, reason + 'name', 'test', '2018-09-10', '2018-09-10', '00:00:00', '23:59:59']
 
     #进入机构页面
-    def jgPage(self):
+    def JgPage(self):
         '''
         :return:
         '''
@@ -91,8 +91,8 @@ class jg(BasePage):
         leftMenu.find_element_by_id('sidebarTree_16_a').click()
         #gnMenu = self.findElement(*self.menuList[2]).click()
         time.sleep(1)
-        jgList = self.findElement(*self.functionList)
-        jgList.find_element_by_xpath('//*[@id="sidebarTree_17_a"]').click()
+        JgList = self.findElement(*self.functionList)
+        JgList.find_element_by_xpath('//*[@id="sidebarTree_17_a"]').click()
         time.sleep(1)
         log.logger.info('page [%s] :found the menu [%s] and [%s]' % (sys._getframe().f_code.co_name, self.menuList[0], self.functionList))
 

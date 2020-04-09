@@ -5,16 +5,16 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.role_page import rolePage
+from framfriend.test_case.page_obj.role_page import RolePage
 
-class role_TC(MyunitTest):
+class Role_TC(MyunitTest):
     """角色模块测试用例"""
 
     def test_alone_query_(self):
         '''按角色、表示位、描述单一条件查询'''
-        menu = rolePage(self.driver)#实例化角色管理页面
+        menu = RolePage(self.driver)#实例化角色管理页面
         self.login.loginFunc()#登录
-        menu.inrolePage()#进入角色管理页面
+        menu.inRolePage()#进入角色管理页面
         time.sleep(3)
         for role_show_describe in menu.query_list:
             menu.reset()#重置
@@ -30,9 +30,9 @@ class role_TC(MyunitTest):
 
     def testaddrole_1(self):
         '''为空新增角色验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])#点击新增按钮
         menu.cBtn(menu.button_list[5])#点击新增提交按钮
@@ -54,9 +54,9 @@ class role_TC(MyunitTest):
 
     def testaddrole_2(self):
         '''角色为空验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])#点击新增
         menu.inputValue(menu.addrole_list[1],menu.valueList[1])#输入表示位
@@ -70,9 +70,9 @@ class role_TC(MyunitTest):
 
     def testaddrole_3(self):
         '''表示位为空验证'''
-        menu = rolePage(self.driver) # 实例化角色管理页面
+        menu = RolePage(self.driver) # 实例化角色管理页面
         self.login.loginFunc() #登录
-        menu.inrolePage() #进入角色管理页面
+        menu.inRolePage() #进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[1])#点击新增按钮
         menu.inputValue(menu.addrole_list[0],menu.valueList[0])#输入角色名称
@@ -86,9 +86,9 @@ class role_TC(MyunitTest):
 
     def testaddrole_4(self):
         '''描述为空验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[1])#点击新增按钮
         menu.inputValue(menu.addrole_list[0],menu.valueList[0])#输入角色名称
@@ -102,9 +102,9 @@ class role_TC(MyunitTest):
 
     def testaddrole_5(self):
         '''新增成功验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[1])  # 点击新增按钮
         menu.inputValue(menu.addrole_list[0], menu.valueList[0])  # 输入角色名称
@@ -120,9 +120,9 @@ class role_TC(MyunitTest):
 
     def testupdaterole_1(self):
         '''点击修改验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[2]) #点击修改按钮
         time.sleep(1)
@@ -134,9 +134,9 @@ class role_TC(MyunitTest):
 
     def testupdaterole_2(self):
         '''选中多项点击修改按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[1])#全选
         menu.cBtn(menu.button_list[2])#点击修改按钮
@@ -148,9 +148,9 @@ class role_TC(MyunitTest):
 
     def testupdaterole_3(self):
         '''删除已有数据提交'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])#选中修改项
         menu.cBtn(menu.button_list[2])  # 点击修改按钮
@@ -177,9 +177,9 @@ class role_TC(MyunitTest):
 
     def testupdaterole_4(self):
         '''修改必填项验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选中修改项
         menu.cBtn(menu.button_list[2])  # 点击修改按钮
@@ -196,9 +196,9 @@ class role_TC(MyunitTest):
 
     def testmenuAssignment_1(self):
         '''点击菜单分配'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[3])#点击菜单分配
         time.sleep(1)
@@ -210,9 +210,9 @@ class role_TC(MyunitTest):
 
     def testmenuAssignment_2(self):
         '''选中多项点击菜单分配'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[1])  # 全选
         menu.cBtn(menu.button_list[3])#点击菜单分配
@@ -225,9 +225,9 @@ class role_TC(MyunitTest):
 
     def testmenuAssignment_3(self):
         '''选中一项点击菜单分配'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])#选中一项
         menu.cBtn(menu.button_list[3])#点击菜单分配
@@ -242,9 +242,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_1(self):
         '''点击按钮分配'''
-        menu = rolePage(self.driver)# 实例化角色管理页面
+        menu = RolePage(self.driver)# 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[4])#点击按钮分配
         time.sleep(1)
@@ -256,9 +256,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_2(self):
         '''选中多项点击按钮分配'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[1])  # 全选
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -271,9 +271,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_3(self):
         '''选中一项点击按钮分配'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])#选择一项
         menu.cBtn(menu.button_list[4])#点击按钮分配
@@ -282,9 +282,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_4(self):
         '''点击新增按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -294,9 +294,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_5(self):
         '''选中节点点击新增按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -308,9 +308,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_6(self):
         '''新增按钮不输入必填项点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -346,9 +346,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_7(self):
         '''新增按钮不输入按钮名称点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -369,9 +369,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_8(self):
         '''新增按钮不输入英文名称点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -392,9 +392,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_9(self):
         '''新增按钮不输入表示位点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -415,9 +415,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_10(self):
         '''新增按钮不输入图标点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -438,9 +438,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_11(self):
         '''新增按钮不输入描述点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -461,9 +461,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_12(self):
         '''正常输入点击提交按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -483,9 +483,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_13(self):
         '''点击修改按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -496,9 +496,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_14(self):
         '''选中多项点击修改按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -511,9 +511,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_15(self):
         '''选中一项点击修改按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -526,9 +526,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_16(self):
         '''修改清空按钮必填项点击提交验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -572,9 +572,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_17(self):
         '''修改必填项点击提交验证'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -594,9 +594,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_18(self):
         '''点击删除按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -606,9 +606,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_19(self):
         '''选中删除项点击删除按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -621,9 +621,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_20(self):
         '''删除按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配
@@ -637,9 +637,9 @@ class role_TC(MyunitTest):
 
     def testbuttonAssigned_21(self):
         '''关闭按钮'''
-        menu = rolePage(self.driver)  # 实例化角色管理页面
+        menu = RolePage(self.driver)  # 实例化角色管理页面
         self.login.loginFunc()  # 登录
-        menu.inrolePage()  # 进入角色管理页面
+        menu.inRolePage()  # 进入角色管理页面
         time.sleep(2)
         menu.cBtn(menu.updaterole_list[0])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击按钮分配

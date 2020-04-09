@@ -8,16 +8,16 @@ import time
 
 from selenium.webdriver.support.select import Select
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.user_page import userPage
+from framfriend.test_case.page_obj.user_page import UserPage
 
-class user_TC(MyunitTest):
+class User_TC(MyunitTest):
     """用户模块测试用例"""
 
     def test_alone_query_1(self):
         """按昵称,手机号码，登录账号单一条件查询"""
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         for name_phone_login in menu.query_list:
             menu.reset()  # 重置
@@ -33,9 +33,9 @@ class user_TC(MyunitTest):
 
     def test_alone_query_2(self):
         """按角色类型单一查询"""
-        menu = userPage(self.driver) # 实例化用户管理页面
+        menu = UserPage(self.driver) # 实例化用户管理页面
         self.login.loginFunc() # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         role = self.driver.find_element_by_id('role_id')
         Select(role).select_by_value('0fea1af336204e7d8dd2d63768751253')#获取下拉选
@@ -49,9 +49,9 @@ class user_TC(MyunitTest):
 
     def testadduser_1(self):
         '''为空新增用户:'''
-        menu = userPage(self.driver) # 实例化用户管理页面
+        menu = UserPage(self.driver) # 实例化用户管理页面
         self.login.loginFunc() # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.cBtn(menu.button_list[8])
@@ -83,9 +83,9 @@ class user_TC(MyunitTest):
 
     def testadduser_2(self):
         ''' 用户名为空新增'''
-        menu = userPage(self.driver)#实例化用户管理页面
+        menu = UserPage(self.driver)#实例化用户管理页面
         self.login.loginFunc()#登录
-        menu.inuserpage()#进入用户管理页面
+        menu.inUserPage()#进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         '''输入其他必填项'''
@@ -103,9 +103,9 @@ class user_TC(MyunitTest):
 
     def testadduser_3(self):
         ''' 昵称为空新增'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -122,9 +122,9 @@ class user_TC(MyunitTest):
 
     def testadduser_4(self):
         ''' 登录账号为空新增'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -141,9 +141,9 @@ class user_TC(MyunitTest):
 
     def testadduser_5(self):
         ''' 密码为空新增'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -160,9 +160,9 @@ class user_TC(MyunitTest):
 
     def testadduser_6(self):
         ''' 手机号为空新增'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -179,9 +179,9 @@ class user_TC(MyunitTest):
 
     def testadduser_7(self):
         ''' 手机号格式不正确新增'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -199,9 +199,9 @@ class user_TC(MyunitTest):
 
     def testadduser_8(self):
         ''' 正确输入新增成功'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.inputValue(menu.addinput[0], menu.valueList[0])
@@ -219,9 +219,9 @@ class user_TC(MyunitTest):
 
     def testadduser_9(self):
         ''' 验证选择所属机构'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         menu.cBtn(menu.addinput[5])
@@ -234,9 +234,9 @@ class user_TC(MyunitTest):
 
     def testadduser_10(self):
         ''' 验证选择角色'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[1])
         role = self.driver.find_element_by_name('roleId')
@@ -246,9 +246,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_1(self):
         '''验证点击修改按钮'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[2])
         time.sleep(1)
@@ -260,9 +260,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_2(self):
         '''验证选择多项点击修改按钮'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.updateuser[2])
         menu.cBtn(menu.button_list[2])
@@ -275,9 +275,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_3(self):
         '''验证删除修改必填项点击提交'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.updateuser[3])#选择一项
         menu.cBtn(menu.button_list[2])#点击修改按钮
@@ -297,9 +297,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_4(self):
         '''验证修改登录账号点击提交'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.updateuser[3])#选择一项
         menu.cBtn(menu.button_list[2])#点击修改按钮
@@ -320,9 +320,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_5(self):
         '''验证修改登录密码点击提交'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.updateuser[3])#选择一项
         menu.cBtn(menu.button_list[2])#点击修改按钮
@@ -337,9 +337,9 @@ class user_TC(MyunitTest):
 
     def testupdateuser_6(self):
         '''验证修改性别，角色提交'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.updateuser[3])#选择一项
         menu.cBtn(menu.button_list[2])#点击修改按钮
@@ -369,9 +369,9 @@ class user_TC(MyunitTest):
 
     def testdeleteuser_1(self):
         '''点击删除按钮'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.button_list[3])#点击删除按钮
         msg1 = menu.isElementExist(menu.deleteuser[0])
@@ -379,12 +379,12 @@ class user_TC(MyunitTest):
         if msg1:
             msgInfo = menu.getValue(*menu.deleteuser[0])
             self.assertEqual(msgInfo, '×\n提示! 请选中一项内容！', '提示信息正确')
-
+    """
     def testdeleteuser_2(self):
         '''选择一项点击删除验证'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(3)
         menu.cBtn(menu.deleteuser[2])#选择删除项
         menu.cBtn(menu.button_list[3])  # 点击删除按钮
@@ -396,12 +396,12 @@ class user_TC(MyunitTest):
         if msg2_1:
             msgInfo = menu.getValue(*menu.deleteuser[1])
             self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
-
+     """
     def testorgan_1(self):
         '''点击机构分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[4])#点击机构分配
         msg1 = menu.isElementExist(menu.allot[0])
@@ -412,9 +412,9 @@ class user_TC(MyunitTest):
 
     def testorgan_2(self):
         '''选择多项点击机构分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[2])#选择多项
         menu.cBtn(menu.button_list[4])#点击机构分配
@@ -427,9 +427,9 @@ class user_TC(MyunitTest):
 
     def testorgan_3(self):
         '''选择一项点击机构分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[3])  # 选择一项
         menu.cBtn(menu.button_list[4])  # 点击机构分配
@@ -450,9 +450,9 @@ class user_TC(MyunitTest):
 
     def testaccount_1(self):
         '''点击账套分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[5])  # 点击账套分配
         time.sleep(1)
@@ -464,9 +464,9 @@ class user_TC(MyunitTest):
 
     def testaccount_2(self):
         '''选中多项点击账套分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[2])  # 选择多项
         menu.cBtn(menu.button_list[5])  # 点击账套分配
@@ -479,9 +479,9 @@ class user_TC(MyunitTest):
 
     def testaccount_3(self):
         '''选择一项点击账套分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[3])  # 选择一项
         menu.cBtn(menu.button_list[5])  # 点击账套分配
@@ -496,9 +496,9 @@ class user_TC(MyunitTest):
 
     def testlimits_1(self):
         ''' 点击权限分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[6])  # 点击账套分配
         time.sleep(1)
@@ -510,9 +510,9 @@ class user_TC(MyunitTest):
 
     def testlimits_2(self):
         '''选中多项点击权限分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[2])  # 选择多项
         menu.cBtn(menu.button_list[6])  # 点击权限分配
@@ -525,9 +525,9 @@ class user_TC(MyunitTest):
 
     def testlimits_3(self):
         '''选择一项点击权限分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[3])  # 选择一项
         menu.cBtn(menu.button_list[6])  # 点击权限分配
@@ -542,9 +542,9 @@ class user_TC(MyunitTest):
 
     def testarea_1(self):
         '''点击地区分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.button_list[7])  # 点击地区分配
         time.sleep(1)
@@ -556,9 +556,9 @@ class user_TC(MyunitTest):
 
     def testarea_2(self):
         '''选中多项点击地区分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[2])  # 选择多项
         menu.cBtn(menu.button_list[7])  # 点击地区分配
@@ -571,9 +571,9 @@ class user_TC(MyunitTest):
 
     def testarea_3(self):
         '''选择一项点击地区分配'''
-        menu = userPage(self.driver)  # 实例化用户管理页面
+        menu = UserPage(self.driver)  # 实例化用户管理页面
         self.login.loginFunc()  # 登录
-        menu.inuserpage()  # 进入用户管理页面
+        menu.inUserPage()  # 进入用户管理页面
         time.sleep(2)
         menu.cBtn(menu.updateuser[3])  # 选择一项
         menu.cBtn(menu.button_list[7])  # 点击地区分配

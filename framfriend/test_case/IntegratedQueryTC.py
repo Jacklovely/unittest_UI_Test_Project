@@ -8,14 +8,14 @@ import time
 from selenium.webdriver.support.select import Select
 
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.IntegratedQuery_page import IntegratedQuery_page
+from framfriend.test_case.page_obj.IntegratedQuery_page import IntegratedQuery_Page
 
 class IntegratedQuery_Tc(MyunitTest):
     '''转账查询模块用例'''
 
     def test_alone_query1(self):
         """按己方银行,对方银行，摘要单一条件查询"""
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)
@@ -27,13 +27,13 @@ class IntegratedQuery_Tc(MyunitTest):
                 time.sleep(3)
                 flag = menu.getValue(*menu.msg[0])
                 try:
-                    self.assertIn('哈哈哈哈',flag, '查询成功')
+                    self.assertIn('沂南县蒲汪镇经管统计站',flag, '查询成功')
                 except Exception:
-                    self.assertNotIn('哈哈哈哈', flag, '输入的查询条件无效')
+                    self.assertNotIn('沂南县蒲汪镇经管统计站', flag, '输入的查询条件无效')
 
     def test_time_query2(self):
         '''订单开始时间查询'''
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)
@@ -55,7 +55,7 @@ class IntegratedQuery_Tc(MyunitTest):
 
     def test_state_query3(self):
         '''交易状态查询查询'''
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)
@@ -70,7 +70,7 @@ class IntegratedQuery_Tc(MyunitTest):
 
     def test_dataprint(self):
         '''点击订单后打印按钮'''
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)
@@ -81,7 +81,7 @@ class IntegratedQuery_Tc(MyunitTest):
 
     def test_bulkprint_1(self):
         '''单数据点击批量打印'''
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)
@@ -93,7 +93,7 @@ class IntegratedQuery_Tc(MyunitTest):
 
     def test_bulkprint_2(self):
         '''全选点击批量打印'''
-        menu = IntegratedQuery_page(self.driver)  # 实例化转账查询页面
+        menu = IntegratedQuery_Page(self.driver)  # 实例化转账查询页面
         self.login.loginFunc()  # 登录
         menu.inIntegratedQuery()  # 进入转账查询页面
         time.sleep(3)

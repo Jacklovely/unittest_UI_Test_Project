@@ -5,14 +5,14 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.otherbank_page import otherbank_page
+from framfriend.test_case.page_obj.otherbank_page import OtherBank_Page
 
-class otherbank_Tc(MyunitTest):
+class OtherBank_Tc(MyunitTest):
     '''对方银行设置模块用例'''
 
     def test_alone_query(self):
         """按开户机构,户名，账号，银行名称单一条件查询"""
-        menu =otherbank_page(self.driver) # 实例化对方银行设置页面
+        menu =OtherBank_Page(self.driver) # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -30,7 +30,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_1(self):
         '''点击新增按钮验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -41,7 +41,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addownbank_2(self):
         '''为空提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -76,7 +76,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_3(self):
         '''不输入银行名称提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -95,7 +95,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_4(self):
         '''不输入户名提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -114,7 +114,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_5(self):
         '''不输入开户机构提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -133,7 +133,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_6(self):
         '''不输入短信接收人提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -152,7 +152,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_7(self):
         '''不输入手机号提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -171,7 +171,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_8(self):
         '''输入不规则手机号验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -191,7 +191,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_9(self):
         '''正确新增验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -212,7 +212,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_10(self):
         '''重复新增验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -230,7 +230,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_addotherbank_13(self):
         '''点击取消验证验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -242,7 +242,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_1(self):
         '''点击修改验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -253,7 +253,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_2(self):
         '''选择多项点击修改'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -265,7 +265,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_3(self):
         '''选择一项点击修改'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -277,7 +277,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_4(self):
         '''清空必填项点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -319,7 +319,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_5(self):
         '''清空银行名称点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -336,7 +336,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_6(self):
         '''清空户名点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -353,7 +353,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_7(self):
         '''清空开户机构点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -370,7 +370,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_8(self):
         '''清空短信接收人点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -387,7 +387,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_9(self):
         '''清空短信接收人手机号点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -404,7 +404,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_10(self):
         '''修改输入不规则短信接收人手机号点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -421,7 +421,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_11(self):
         '''修改必填项点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -443,7 +443,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_12(self):
         '''修改输入重复银行名称点击提交验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -462,7 +462,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_update_13(self):
         '''点击修改取消验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -474,7 +474,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_delete_1(self):
         '''点击删除验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -485,7 +485,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_delete_2(self):
         '''选择一项点击删除验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -497,7 +497,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_delete_3(self):
         '''确定删除验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)
@@ -512,7 +512,7 @@ class otherbank_Tc(MyunitTest):
 
     def test_delete_4(self):
         '''取消删除验证'''
-        menu = otherbank_page(self.driver)  # 实例化对方银行设置页面
+        menu = OtherBank_Page(self.driver)  # 实例化对方银行设置页面
         self.login.loginFunc()  # 登录
         menu.InotherBankpage()  # 进入对方银行设置页面
         time.sleep(3)

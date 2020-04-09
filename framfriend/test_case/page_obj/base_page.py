@@ -30,7 +30,7 @@ class BasePage(object):
          (By.ID, eleData.readExcel(16, 3)),  # 审批流程
          (By.ID, eleData.readExcel(17, 3))]  # 合同管理
 
-    def __init__(self, driver,url='http://localhost:8081/farmfriend/login/main.do'):
+    def __init__(self, driver,url='http://localhost:8080/farmfriend/login/main.do'):
         """
 
         :param driver:

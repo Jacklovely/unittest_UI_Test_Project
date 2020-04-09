@@ -1,5 +1,5 @@
 '''
-Code description： transfer_page
+Code description： Transfer_Page
 Create time：
 Developer：
 '''
@@ -13,7 +13,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
 
-class transfer_Page(BasePage):
+class Transfer_Page(BasePage):
     '''
     批量转账
     '''
@@ -90,7 +90,7 @@ class transfer_Page(BasePage):
     # 查询数据
     valuesList = [queryData.readExcel(7, 1), int(queryData.readExcel(8, 1)), queryData.readExcel(9, 1)]
     #测试数据
-    valueList = ['test', '123456789123456', '10000000','123594422111','123456']
+    valueList = ['test', '123456789123456', '1','123594422111','123456']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
 
     def intransfer(self):
@@ -212,7 +212,7 @@ class transfer_Page(BasePage):
         '''
         js = 'document.getElementById("file_input").style.display="block";'
         self.jScript(js)
-        self.findElement(*self.button_list[16]).send_keys('E:\\MyDownloads\\20190923034151.xls')  # 定位上传按钮，添加本地文件
+        self.findElement(*self.button_list[16]).send_keys('F:\TestDownloads\\log.xml')  # 定位上传按钮，添加本地文件
         time.sleep(3)
     def uploadture(self):
         '''
@@ -221,7 +221,7 @@ class transfer_Page(BasePage):
         '''
         js = 'document.getElementById("file_input").style.display="block";'
         self.jScript(js)
-        self.findElement(*self.button_list[16]).send_keys('E:\\MyDownloads\\批量转账导入.xlsx')  # 定位上传按钮，添加本地文件
+        self.findElement(*self.button_list[16]).send_keys('F:\TestDownloads\\银农直联批量转账true.xlsx')  # 定位上传按钮，添加本地文件
         time.sleep(3)
 
 if __name__ == '__main__':

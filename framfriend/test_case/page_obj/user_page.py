@@ -11,7 +11,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 from framfriend.test_case.models.log import Logger
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class userPage(BasePage):
+class UserPage(BasePage):
     '''
         用户管理
     '''
@@ -26,7 +26,7 @@ class userPage(BasePage):
     #机构管理
     usergl = (By.ID, eleData.readExcel(20, 3))
     #用户管理页面
-    userpage = (By.XPATH,eleData.readExcel(47,3))
+    UserPage = (By.XPATH,eleData.readExcel(47,3))
     #查询条件 昵称,手机号,登录账号
     query_list = [(By.XPATH, eleData.readExcel(48,3)),(By.XPATH, eleData.readExcel(49,3)),
                   (By.XPATH, eleData.readExcel(50,3))]
@@ -111,7 +111,7 @@ class userPage(BasePage):
          (By.XPATH, eleData.readExcel(118, 3))]#地区分配成功验证4
 
     #用户管理
-    def inuserpage(self):
+    def inUserPage(self):
         '''
         进入用户管理页面
         :return:

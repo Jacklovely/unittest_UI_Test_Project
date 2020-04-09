@@ -1,5 +1,5 @@
 '''
-Code description： ownBanks_page
+Code description： OwnBanks_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class ownBanks_page(BasePage):
+class OwnBanks_Page(BasePage):
     '''
     己方银行设置
     '''

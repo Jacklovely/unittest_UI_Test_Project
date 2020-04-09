@@ -1,5 +1,5 @@
 '''
-Code description： receipt_page
+Code description： Receipt_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class receipt_page(BasePage):
+class Receipt_Page(BasePage):
     '''
         合同收款
     '''

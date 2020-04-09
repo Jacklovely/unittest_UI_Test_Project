@@ -6,20 +6,20 @@ Developer：
 
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.switch_page import switchPage
-class switch_Tc(MyunitTest):
+from framfriend.test_case.page_obj.switch_page import SwitchPage
+class Switch_Tc(MyunitTest):
     '''风格切换测试用例'''
     def testclick_1(self):
-        menu = switchPage(self.driver)  # 实例化风格切换页面
+        menu = SwitchPage(self.driver)  # 实例化风格切换页面
         self.login.loginFunc()  # 登录
-        menu.inswitchPage()  # 进入风格切换页面
+        menu.inSwitchPage()  # 进入风格切换页面
         time.sleep(2)
         menu.cBtn(menu.element[0])
         msg1 = menu.isElementExist(menu.element[2])
         self.assertFalse(msg1,'切换横版')
 
     def testclick_2(self):
-        menu = switchPage(self.driver)  # 实例化风格切换页面
+        menu = SwitchPage(self.driver)  # 实例化风格切换页面
         self.login.loginFunc()  # 登录
         time.sleep(2)
         menu.cBtn(menu.element[3])#点击基础功能

@@ -1,5 +1,5 @@
 '''
-Code description： register_page
+Code description： Register_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 from framfriend.test_case.models.log import Logger
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class register_page(BasePage):
+class Register_Page(BasePage):
     '''
         合同登记
     '''

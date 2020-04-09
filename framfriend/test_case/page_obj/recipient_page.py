@@ -1,5 +1,5 @@
 '''
-Code description： recipient_page
+Code description： Recipient_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData, queryData
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class recipient_page(BasePage):
+class Recipient_Page(BasePage):
     '''
     短信接收人设置
     '''

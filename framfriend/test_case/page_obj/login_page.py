@@ -30,9 +30,9 @@ class LoginPage(BasePage):
 
     # 用户名和密码
     unpwData = \
-        [[testLoginData.readExcel(1, 0), int (testLoginData.readExcel(1, 1))],# 正确的用户名和正确的密码
-         [testLoginData.readExcel(2, 0), int (testLoginData.readExcel(2, 1))],# 错误的用户名和正确的密码
-         [testLoginData.readExcel(3, 0), int (testLoginData.readExcel(3, 1))],# 空的用户名和正确的密码
+        [[testLoginData.readExcel(1, 0), testLoginData.readExcel(1, 1)],# 正确的用户名和正确的密码
+         [testLoginData.readExcel(2, 0), testLoginData.readExcel(2, 1)],# 错误的用户名和正确的密码
+         [testLoginData.readExcel(3, 0), testLoginData.readExcel(3, 1)],# 空的用户名和正确的密码
          [testLoginData.readExcel(4, 0), testLoginData.readExcel(4, 1)],# 错误的用户名和错误的密码
          [testLoginData.readExcel(5, 0), testLoginData.readExcel(5, 1)],# 正确的用户名和空密码
          [testLoginData.readExcel(6, 0), testLoginData.readExcel(6, 1)],# 正确的用户名和错误的密码
@@ -65,7 +65,7 @@ class LoginPage(BasePage):
         return info
 
     # 统一登录函数
-    def loginFunc(self, username='admin', password='123456'):
+    def loginFunc(self, username='admin', password='wtxxkj123'):
         """
         :param username:
         :param cipher:
@@ -73,7 +73,7 @@ class LoginPage(BasePage):
         """
         self.inputValue(self.userNameEle, username)
         self.inputValue(self.passWordEle, password)
-        time.sleep(1)
+        time.sleep(3)
         # self.selectKit()
         self.clickLoginBtn()
 

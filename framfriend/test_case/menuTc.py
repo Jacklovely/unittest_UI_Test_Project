@@ -5,13 +5,13 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.menu_page import menu_Page
+from framfriend.test_case.page_obj.menu_page import Menu_Page
 
-class menu_Tc(MyunitTest):
+class Menu_Tc(MyunitTest):
     '''菜单管理模块用例'''
     def test_addmenu_1(self):
         '''点击新增按钮'''
-        menu = menu_Page(self.driver) #实例化菜单管理页面
+        menu = Menu_Page(self.driver) #实例化菜单管理页面
         self.login.loginFunc() #登录
         menu.inmenuPage() #进入菜单管理页面
         time.sleep(2)
@@ -21,7 +21,7 @@ class menu_Tc(MyunitTest):
 
     def test_addmenu_2(self):
         '''不输入必填项提交'''
-        menu = menu_Page(self.driver) #实例化菜单管理页面
+        menu = Menu_Page(self.driver) #实例化菜单管理页面
         self.login.loginFunc()#登录
         menu.inmenuPage()#进入菜单管理页面
         time.sleep(2)
@@ -35,7 +35,7 @@ class menu_Tc(MyunitTest):
 
     def test_addmenu_3(self):
         '''错误输入排序'''
-        menu = menu_Page(self.driver) #实例化菜单管理页面
+        menu = Menu_Page(self.driver) #实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -49,7 +49,7 @@ class menu_Tc(MyunitTest):
 
     def test_addmenu_4(self):
         '''输入必填项点击新增'''
-        menu = menu_Page(self.driver) #实例化菜单管理页面
+        menu = Menu_Page(self.driver) #实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -67,7 +67,7 @@ class menu_Tc(MyunitTest):
 
     def test_addmenu_5(self):
         '''点击取消关闭窗口'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -80,7 +80,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemenu_1(self):
         '''点击修改按钮'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -94,7 +94,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemanu_2(self):
         '''选中节点点击修改按钮'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -109,7 +109,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemenu_3(self):
         '''清空必填项提交验证'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -129,7 +129,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemenu_4(self):
         '''错误输入排序'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -149,7 +149,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemenu_5(self):
         '''正确修改提交'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -174,7 +174,7 @@ class menu_Tc(MyunitTest):
 
     def test_updatemenu_6(self):
         '''点击取消按钮'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -190,7 +190,7 @@ class menu_Tc(MyunitTest):
 
     def test_deletemenu_1(self):
         '''点击删除按钮'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -203,7 +203,7 @@ class menu_Tc(MyunitTest):
 
     def test_deletemenu_2(self):
         '''选中节点点击删除'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -218,7 +218,7 @@ class menu_Tc(MyunitTest):
 
     def test_deletemenu_3(self):
         '''确定删除'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)
@@ -238,7 +238,7 @@ class menu_Tc(MyunitTest):
 
     def test_deletemenu_4(self):
         '''取消删除'''
-        menu = menu_Page(self.driver)  # 实例化菜单管理页面
+        menu = Menu_Page(self.driver)  # 实例化菜单管理页面
         self.login.loginFunc()  # 登录
         menu.inmenuPage()  # 进入菜单管理页面
         time.sleep(2)

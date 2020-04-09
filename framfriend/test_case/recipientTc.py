@@ -5,14 +5,14 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.recipient_page import recipient_page
+from framfriend.test_case.page_obj.recipient_page import Recipient_Page
 
-class recipient_Tc(MyunitTest):
+class Recipient_Tc(MyunitTest):
     '''短信接收人设置模块用例'''
 
     def test_alone_query(self):
         """按姓名，手机号单一条件查询"""
-        menu =recipient_page(self.driver) # 实例化短信接收人设置页面
+        menu =Recipient_Page(self.driver) # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage() # 进入短信接收人设置页面
         time.sleep(3)
@@ -30,7 +30,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_1(self):
         '''点击新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -40,7 +40,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_2(self):
         '''为空新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -53,7 +53,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_3(self):
         '''不输入姓名新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -65,7 +65,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_4(self):
         '''不输入手机号新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -77,7 +77,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_5(self):
         '''输入不规则手机号新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -90,7 +90,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_6(self):
         '''输入重复手机号新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -103,7 +103,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_7(self):
         '''正常新增验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -117,7 +117,7 @@ class recipient_Tc(MyunitTest):
 
     def test_add_8(self):
         '''新增取消验证'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -128,7 +128,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_1(self):
         '''点击修改按钮'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -139,7 +139,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_2(self):
         '''全选点击修改按钮'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -151,7 +151,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_3(self):
         '''全选点击修改按钮'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -162,7 +162,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_4(self):
         '''清空必填项提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -178,7 +178,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_5(self):
         '''清空姓名提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -191,7 +191,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_6(self):
         '''清空手机号提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -204,7 +204,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_7(self):
         '''修改输入不规则提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -217,7 +217,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_8(self):
         '''修改输入重复手机号提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -230,7 +230,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_9(self):
         '''正确修改提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -245,7 +245,7 @@ class recipient_Tc(MyunitTest):
 
     def test_update_10(self):
         '''取消修改提交'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -257,7 +257,7 @@ class recipient_Tc(MyunitTest):
 
     def test_delete_1(self):
         '''点击删除'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -267,7 +267,7 @@ class recipient_Tc(MyunitTest):
 
     def test_delete_2(self):
         '''选择一项点击删除'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -278,7 +278,7 @@ class recipient_Tc(MyunitTest):
 
     def test_delete_3(self):
         '''选择一项点击删除'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)
@@ -291,7 +291,7 @@ class recipient_Tc(MyunitTest):
 
     def test_delete_4(self):
         '''取消删除'''
-        menu = recipient_page(self.driver)  # 实例化短信接收人设置页面
+        menu = Recipient_Page(self.driver)  # 实例化短信接收人设置页面
         self.login.loginFunc()  # 登录
         menu.inrecipientpage()  # 进入短信接收人设置页面
         time.sleep(3)

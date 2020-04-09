@@ -36,7 +36,7 @@ class WDriver(object):
         """
         try:
             chromeOptions = webdriver.ChromeOptions()
-            prefs = {"download.default_directory": "E:\\MyDownloads"}
+            prefs = {"download.default_directory": "F:\\TestDownloads"}
             chromeOptions.add_experimental_option("prefs", prefs)
             self.driver = webdriver.Chrome(options=chromeOptions)
             time.sleep(10)

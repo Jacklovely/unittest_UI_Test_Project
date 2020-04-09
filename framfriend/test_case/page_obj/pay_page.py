@@ -1,5 +1,5 @@
 '''
-Code description： pay_page
+Code description： Pay_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.page_obj.base_page import BasePage,eleData
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
 
-class pay_Page(BasePage):
+class Pay_Page(BasePage):
     '''
     单笔支付
     '''
@@ -70,7 +70,7 @@ class pay_Page(BasePage):
          (By.XPATH, eleData.readExcel(273, 3)),#点击添加新收款方验证20
          (By.XPATH, '//*[@id="hasntOtherBank"]/div[4]/div/small[2]')]#新增收款方联行号错误
     # 测试数据
-    valueList = ['967687572875767575', '811247857857', '100000000','123456']
+    valueList = ['967687572875767575', '811247857857', '1','123456','测试']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
 
     def insinglePay(self):

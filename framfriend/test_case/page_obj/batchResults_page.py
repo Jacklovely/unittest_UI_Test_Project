@@ -1,5 +1,5 @@
 '''
-Code description： batchResults_page
+Code description： BatchResults_Page
 Create time：
 Developer：
 '''
@@ -12,7 +12,7 @@ from framfriend.test_case.page_obj.base_page import BasePage, eleData
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class batchResults_page(BasePage):
+class BatchResults_Page(BasePage):
     '''
     批量转账查询
     '''

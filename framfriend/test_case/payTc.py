@@ -5,14 +5,14 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.pay_page import pay_Page
+from framfriend.test_case.page_obj.pay_page import Pay_Page
 
-class pay_Tc(MyunitTest):
+class Pay_Tc(MyunitTest):
     '''单笔支付模块用例'''
 
     def test_singlePay_1(self):
         '''选择村居验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay() # 进入单笔支付页面
         time.sleep(2)
@@ -27,7 +27,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_2(self):
         '''选择收款方验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay() # 进入单笔支付页面
         time.sleep(2)
@@ -46,7 +46,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_3(self):
         '''不输入内容点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -68,7 +68,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_4(self):
         '''不选择村居点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -83,7 +83,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_5(self):
             '''不选择收款方点击开始支付验证'''
-            menu = pay_Page(self.driver)  # 实例化单笔支付页面
+            menu = Pay_Page(self.driver)  # 实例化单笔支付页面
             self.login.loginFunc()  # 登录
             menu.insinglePay()  # 进入单笔支付页面
             time.sleep(2)
@@ -100,7 +100,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_6(self):
         '''不输入金额点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -118,7 +118,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_7(self):
         '''不输入摘要点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -136,7 +136,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_8(self):
         '''输入错误金额点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -145,7 +145,7 @@ class pay_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         menu.cBtn(menu.button_list[3])  # 选择收款方
         menu.inputValue(menu.input_list[4], menu.reason)  # 输入错误金额
-        menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
+        menu.inputValue(menu.input_list[5], menu.valueList[4])  # 输入摘要
         menu.cBtn(menu.button_list[5])  # 点击开始支付
         msg8_1 = menu.isElementExist(menu.msg_list[3])
         self.assertTrue(msg8_1, '金额出现提示信息')
@@ -155,7 +155,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_9(self):
         '''正确输入点击开始支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -164,14 +164,14 @@ class pay_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         menu.cBtn(menu.button_list[3])  # 选择收款方
         menu.inputValue(menu.input_list[4], menu.valueList[2])  # 输入金额
-        menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
+        menu.inputValue(menu.input_list[5], menu.valueList[4])  # 输入摘要
         menu.cBtn(menu.button_list[5])  # 点击开始支付
         msg9_1 = menu.isElementExist(menu.msg_list[18])
         self.assertTrue(msg9_1, '弹出确认支付窗口')
 
     def test_singlePay_10(self):
         '''不输入支付密码确定验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -180,7 +180,7 @@ class pay_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         menu.cBtn(menu.button_list[3])  # 选择收款方
         menu.inputValue(menu.input_list[4], menu.valueList[2])  # 输入金额
-        menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
+        menu.inputValue(menu.input_list[5], menu.valueList[4])  # 输入摘要
         menu.cBtn(menu.button_list[5])  # 点击开始支付
         menu.cBtn(menu.button_list[7])#点击确定按钮
         msg10_1 = menu.isElementExist(menu.msg_list[9])
@@ -188,7 +188,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_11(self):
         '''输入错误支付密码确定验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -197,7 +197,7 @@ class pay_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         menu.cBtn(menu.button_list[3])  # 选择收款方
         menu.inputValue(menu.input_list[4], menu.valueList[2])  # 输入金额
-        menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
+        menu.inputValue(menu.input_list[5], menu.valueList[4])  # 输入摘要
         menu.cBtn(menu.button_list[5])  # 点击开始支付
         menu.inputValue(menu.input_list[6],menu.valueList[2])#输入错误密码验证
         menu.cBtn(menu.button_list[7])  # 点击确定按钮
@@ -206,7 +206,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_12(self):
         '''输入正确支付密码确定验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -215,7 +215,7 @@ class pay_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         menu.cBtn(menu.button_list[3])  # 选择收款方
         menu.inputValue(menu.input_list[4], menu.valueList[2])  # 输入金额
-        menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
+        menu.inputValue(menu.input_list[5], menu.valueList[4])  # 输入摘要
         menu.cBtn(menu.button_list[5])  # 点击开始支付
         menu.inputValue(menu.input_list[6], menu.valueList[3])  # 输入密码
         menu.cBtn(menu.button_list[7])  # 点击确定按钮
@@ -224,7 +224,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_13(self):
         '''关闭支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -242,7 +242,7 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_14(self):
         '''点击添加新收款方验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
@@ -252,12 +252,13 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_15(self):
         '''不输入新收款方内容支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
         menu.cBtn(menu.button_list[0])
         menu.cBtn(menu.button_list[1])  # 选择村居
+        time.sleep(1)
         menu.cBtn(menu.button_list[4])  # 点击添加新收款方
         menu.inputValue(menu.input_list[4], menu.valueList[2])  # 输入金额
         menu.inputValue(menu.input_list[5], menu.reason)  # 输入摘要
@@ -280,12 +281,13 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_16(self):
         '''不输入新收款方账号支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
         menu.cBtn(menu.button_list[0])
         menu.cBtn(menu.button_list[1])  # 选择村居
+        time.sleep(1)
         menu.cBtn(menu.button_list[4])  # 点击添加新收款方
         menu.inputValue(menu.input_list[2], menu.reason)  # 输入户名
         menu.inputValue(menu.input_list[3], menu.valueList[1])  # 输入联行号
@@ -300,12 +302,13 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_17(self):
         '''输入不规则新收款方账号支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
         menu.cBtn(menu.button_list[0])
         menu.cBtn(menu.button_list[1])  # 选择村居
+        time.sleep(1)
         menu.cBtn(menu.button_list[4])  # 点击添加新收款方
         menu.inputValue(menu.input_list[1], menu.reason)  # 输入账号
         menu.inputValue(menu.input_list[2], menu.reason)  # 输入户名
@@ -321,12 +324,13 @@ class pay_Tc(MyunitTest):
 
     def test_singlePay_18(self):
         '''不输入新收款方户名支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
         menu.cBtn(menu.button_list[0])
         menu.cBtn(menu.button_list[1])  # 选择村居
+        time.sleep(1)
         menu.cBtn(menu.button_list[4])  # 点击添加新收款方
         menu.inputValue(menu.input_list[1], menu.valueList[0])  # 输入账号
         menu.inputValue(menu.input_list[3], menu.valueList[1])  # 输入联行号
@@ -339,14 +343,15 @@ class pay_Tc(MyunitTest):
             msgInfo = menu.getValue(*menu.msg_list[7])
             self.assertEqual(msgInfo, '不能为空', '提示信息正确')
 
-    def test_singlePay_20(self):
+    def test_singlePay_19(self):
         '''输入错误新增联行号支付验证'''
-        menu = pay_Page(self.driver)  # 实例化单笔支付页面
+        menu = Pay_Page(self.driver)  # 实例化单笔支付页面
         self.login.loginFunc()  # 登录
         menu.insinglePay()  # 进入单笔支付页面
         time.sleep(2)
         menu.cBtn(menu.button_list[0])
         menu.cBtn(menu.button_list[1])  # 选择村居
+        time.sleep(1)
         menu.cBtn(menu.button_list[4])  # 点击添加新收款方
         menu.inputValue(menu.input_list[1], menu.valueList[0])  # 输入新增账号
         menu.inputValue(menu.input_list[2], menu.reason)  # 输入户名

@@ -75,18 +75,18 @@ class Login_TC(MyunitTest):
             # self.login.selectKit()
             self.login.clickLoginBtn()
             time.sleep(2)
-            if listitem[0] =='admin' and listitem[1] == '666666':
+            if listitem[0] =='admin' and listitem[1] == 'wtxxkj123':
                 currUrl = self.driver.current_url
                 self.assertIn('main', currUrl)
                 self.login.quit()
-            elif listitem[0] == 'admin' and listitem[1] != '666666':
+            elif listitem[0] == 'admin' and listitem[1] != 'wtxxkj123':
                 if listitem[1] == '':
                     failText = self.login.getFailedText()
                     self.assertEqual('密码不正确', failText, '提示信息错误')
                 else:
                     failText = self.login.getFailedText()
                     self.assertEqual('账号不存在', failText, '提示信息错误')
-            elif listitem[0] != 'admin' and listitem[1] == '666666':
+            elif listitem[0] != 'admin' and listitem[1] == 'wtxxkj123':
                 if listitem[0]=='':
                     title1 = self.driver.find_element_by_xpath('//*[@id="login-middle"]/div/div[1]/h4').text
                     self.assertIn('账号密码登录', title1, '账号密码登录 in title')

@@ -10,7 +10,7 @@ from framfriend.test_case.models.testreport import *
 from framfriend.test_case.models.sendmail import SendMail
 from framfriend.test_case.models.sendmail import getReceiverInfo
 from framfriend.test_case.LoginTc import Login_TC
-from framfriend.test_case.jgTc import jg_TC
+from framfriend.test_case.JgTc import Jg_TC
 
  # 登录模块测试用例场景
 class RunTcScript(object):
@@ -32,20 +32,20 @@ class RunTcScript(object):
     #     self.suite.addTest(Login_TC(testcase))
 
     #机构管理模块测试用例
-    def load_jg_tc(self,testcase):
+    def load_Jg_tc(self,testcase):
         '''
 
         :param testcase:
         :return:
         '''
-        self.suite.addTest(jg_TC(testcase))
+        self.suite.addTest(Jg_TC(testcase))
 
 if __name__ =='__main__':
     # 1.2.3
     suite_tc = RunTcScript()
     # login test cases
     #suite_tc.load_login_tc('test_login_success_correct_username_password') # testcase 1 ： 登录成功
-    suite_tc.load_jg_tc('test_addnulljg_5')
+    suite_tc.load_Jg_tc('test_addnullJg_5')
 
     #3.输出到测试报告--------------------------------
     runner, fp, filename = testreport()

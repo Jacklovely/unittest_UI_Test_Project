@@ -6,14 +6,14 @@ Developer：
 import os
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.transfer_page import transfer_Page
+from framfriend.test_case.page_obj.transfer_page import Transfer_Page
 
-class transfer_Tc(MyunitTest):
+class Transfer_Tc(MyunitTest):
     '''批量转账模块用例'''
 
     def test_alone_query(self):
         """按户名,账号，开户机构单一条件查询"""
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -25,13 +25,13 @@ class transfer_Tc(MyunitTest):
                 time.sleep(3)
                 flag = menu.getValue(*menu.msg_list[8])
                 try:
-                    self.assertIn('测试', flag, '查询成功')
+                    self.assertIn('黄岛一', flag, '查询成功')
                 except Exception:
-                    self.assertNotIn('测试', flag, '查询条件无效')
+                    self.assertNotIn('黄岛一', flag, '查询条件无效')
 
     def test_add_1(self):
         """点击新增按钮"""
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -41,7 +41,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_2(self):
         '''不输入必填项为空验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -75,7 +75,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_3(self):
         '''不选择银行提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -96,7 +96,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_4(self):
         '''不输入对方户名'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -118,7 +118,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_6(self):
         '''不输入备注'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -140,7 +140,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_7(self):
         '''不输入金额'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -162,7 +162,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_8(self):
         '''不输入开户机构'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -184,7 +184,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_9(self):
         '''输入错误账号'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -208,7 +208,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_10(self):
         '''输入错误联行号'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -231,7 +231,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_11(self):
         '''点击新增取消按钮'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -243,7 +243,7 @@ class transfer_Tc(MyunitTest):
 
     def test_add_12(self):
         '''正确新增'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -266,7 +266,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_1(self):
         '''点击修改验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -279,7 +279,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_2(self):
         '''选择多项点击修改验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -293,7 +293,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_3(self):
         '''选择一项点击修改验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -304,7 +304,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_4(self):
         '''清空必填项提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -339,7 +339,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_5(self):
         '''清空金额提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -356,7 +356,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_6(self):
         '''清空对方户名提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -373,7 +373,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_6_1(self):
         '''清空对方账号提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -390,7 +390,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_6_2(self):
         '''输入错误对方账号提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -407,7 +407,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_7(self):
         '''清空开户机构提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -424,7 +424,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_8(self):
         '''金额输入非数字提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -440,7 +440,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_9(self):
         '''联行号输入非数字提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -456,7 +456,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_10(self):
         '''正确修改提交'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -478,7 +478,7 @@ class transfer_Tc(MyunitTest):
 
     def test_update_11(self):
         '''点击取消按钮'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -490,7 +490,7 @@ class transfer_Tc(MyunitTest):
 
     def test_delete_1(self):
         '''点击删除'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -504,7 +504,7 @@ class transfer_Tc(MyunitTest):
 
     def test_delete_2(self):
         '''选择一项点击删除'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -512,10 +512,10 @@ class transfer_Tc(MyunitTest):
         menu.cBtn(menu.button_list[3])#点击删除
         flag = menu.isElementExist(menu.msg_list[11])
         self.assertTrue(flag,'弹出删除窗口')
-
+    """
     def test_delete_3(self):
         '''选择一项点击删除确定'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -528,10 +528,10 @@ class transfer_Tc(MyunitTest):
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[16])
             self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
-
+    """
     def test_delete_4(self):
         '''选择一项点击删除取消'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -543,7 +543,7 @@ class transfer_Tc(MyunitTest):
 
     def test_import_1(self):
         '''点击导入验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -553,7 +553,7 @@ class transfer_Tc(MyunitTest):
 
     def test_import_2(self):
         '''上传错误文件验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -569,7 +569,7 @@ class transfer_Tc(MyunitTest):
 
     def test_import_3(self):
         '''上传正确文件验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -585,7 +585,7 @@ class transfer_Tc(MyunitTest):
 
     def test_import_4(self):
         '''不上传文件提交验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -600,7 +600,7 @@ class transfer_Tc(MyunitTest):
 
     def test_import_5(self):
         '''数据导入点击取消验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -611,7 +611,7 @@ class transfer_Tc(MyunitTest):
 
     def test_transfer_1(self):
         '''点击批量转账'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -625,7 +625,7 @@ class transfer_Tc(MyunitTest):
 
     def test_transfer_2(self):
         '''选择一项点击批量转账'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -636,7 +636,7 @@ class transfer_Tc(MyunitTest):
 
     def test_transfer_3(self):
         '''选择多项点击批量转账'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -647,7 +647,7 @@ class transfer_Tc(MyunitTest):
 
     def test_transfer_4(self):
         '''输入错误支付密码批量转账'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -660,8 +660,8 @@ class transfer_Tc(MyunitTest):
         self.assertTrue(flag, '支付密码错误')
 
     def test_transfer_5(self):
-        '''输入错误支付密码批量转账'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        '''输入正确支付密码批量转账'''
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -675,7 +675,7 @@ class transfer_Tc(MyunitTest):
 
     def test_transfer_6(self):
         '''批量转账点击取消验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
@@ -688,13 +688,13 @@ class transfer_Tc(MyunitTest):
 
     def test_export(self):
         '''点击导出模板验证'''
-        menu = transfer_Page(self.driver)  # 实例化批量转账页面
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
         time.sleep(3)
         menu.cBtn(menu.button_list[6])  # 点击导出模板
         time.sleep(5)
-        print(os.path.exists('E:\\MyDownloads\\银农直联批量转账.xlsx'))  # 检查是否已下载
+        assert (os.path.exists('F:\TestDownloads\\银农直联批量转账.xlsx'))  # 检查是否已下载
 
 if __name__ == '__main__':
         pass

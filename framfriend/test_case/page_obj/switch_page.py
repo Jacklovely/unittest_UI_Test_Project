@@ -1,5 +1,5 @@
 '''
-Code description： menu_page
+Code description： Menu_Page
 Create time：
 Developer：
 '''
@@ -11,7 +11,7 @@ from framfriend.test_case.models.log import Logger
 from framfriend.test_case.page_obj.base_page import BasePage,eleData
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
-class switchPage(BasePage):
+class SwitchPage(BasePage):
     '''
     风格切换
     '''
@@ -22,7 +22,7 @@ class switchPage(BasePage):
                (By.XPATH, eleData.readExcel(223, 3)), (By.XPATH, eleData.readExcel(224, 3)),
                (By.XPATH, eleData.readExcel(225, 3))]
 
-    def inswitchPage(self):
+    def inSwitchPage(self):
         '''
         进入风格切换页面
         :return:

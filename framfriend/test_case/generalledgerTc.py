@@ -7,13 +7,13 @@ import time
 
 from selenium.webdriver.support.select import Select
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.generalledger_page import generalledger_page
-class generalledger_Tc(MyunitTest):
+from framfriend.test_case.page_obj.generalledger_page import GeneralLedger_Page
+class GeneralLedger_Tc(MyunitTest):
     '''执行总账用例'''
 
     def test_time_query_1(self):
         '''时间查询'''
-        menu = generalledger_page(self.driver)  # 实例化总账页面
+        menu = GeneralLedger_Page(self.driver)  # 实例化总账页面
         self.login.loginFunc()  # 登录
         menu.ingeneralledgerpage()  # 进入总账页面
         time.sleep(3)
@@ -31,7 +31,7 @@ class generalledger_Tc(MyunitTest):
 
     def test_contractsubject_query_2(self):
         '''合同主体查询'''
-        menu = generalledger_page(self.driver)  # 实例化总账页面
+        menu = GeneralLedger_Page(self.driver)  # 实例化总账页面
         self.login.loginFunc()  # 登录
         menu.ingeneralledgerpage()  # 进入总账页面
         time.sleep(3)

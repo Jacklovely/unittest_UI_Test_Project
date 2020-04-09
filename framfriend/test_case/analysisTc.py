@@ -5,13 +5,13 @@ Developer：
 '''
 import time
 from framfriend.test_case.models.myunit import MyunitTest
-from framfriend.test_case.page_obj.analysis_page import analysis_page
+from framfriend.test_case.page_obj.analysis_page import Analysis_Page
 
-class analysis_Tc(MyunitTest):
+class Analysis_Tc(MyunitTest):
     '''年限分析模块用例'''
     def test_contract_query_1(self):
         '''查询'''
-        menu = analysis_page(self.driver)  # 实例化年限分析页面
+        menu = Analysis_Page(self.driver)  # 实例化年限分析页面
         self.login.loginFunc()  # 登录
         menu.inanalysispage()  # 进入年限分析页面
         time.sleep(2)
@@ -29,7 +29,7 @@ class analysis_Tc(MyunitTest):
 
     def test_click_detail_1(self):
         '''点击明细'''
-        menu = analysis_page(self.driver)  # 实例化年限分析页面
+        menu = Analysis_Page(self.driver)  # 实例化年限分析页面
         self.login.loginFunc()  # 登录
         menu.inanalysispage()  # 进入年限分析页面
         time.sleep(2)
@@ -41,7 +41,7 @@ class analysis_Tc(MyunitTest):
 
     def test_click_detail_2(self):
         '''全选点击明细'''
-        menu = analysis_page(self.driver)  # 实例化年限分析页面
+        menu = Analysis_Page(self.driver)  # 实例化年限分析页面
         self.login.loginFunc()  # 登录
         menu.inanalysispage()  # 进入年限分析页面
         time.sleep(2)
@@ -54,7 +54,7 @@ class analysis_Tc(MyunitTest):
 
     def test_click_detail_3(self):
         '''选择一项点击明细'''
-        menu = analysis_page(self.driver)  # 实例化年限分析页面
+        menu = Analysis_Page(self.driver)  # 实例化年限分析页面
         self.login.loginFunc()  # 登录
         menu.inanalysispage()  # 进入年限分析页面
         time.sleep(2)
