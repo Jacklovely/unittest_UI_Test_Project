@@ -26,7 +26,7 @@ class Issuing_Page(BasePage):
     payul = (By.XPATH,'//*[@id="sidebarTree_32_ul"]')
     #母子账号代付
     issuing = (By.XPATH,eleData.readExcel(230,3))
-    #批量代付页面
+    #母子账号代付页面
     issuingpage = (By.XPATH,eleData.readExcel(272,3))
     #按钮
     button_list = \
@@ -98,7 +98,7 @@ class Issuing_Page(BasePage):
 
     def inissuing(self):
         '''
-        进入批量代付页面
+        进入母子代付页面
         :return:
         '''
         leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
