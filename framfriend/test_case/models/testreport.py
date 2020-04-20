@@ -9,9 +9,9 @@ import time
 import logging
 import unittest
 from BeautifulReport import BeautifulReport
-from package.HTMLTestRunner import HTMLTestRunner
 from framfriend.config import conf
 from framfriend.test_case.models.log import Logger
+from package import HTMLTestRunner
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 # 用HTMLTestRunner 实现的测试报告
@@ -27,7 +27,7 @@ def testreport():
     except Exception :
         log.logger.exception('[%s] open error cause Failed to generate test report' %fileName)
     else:
-        runner = HTMLTestRunner.HTMLTestReportCN\
+        runner = HTMLTestRunner.HTMLTestReportCN \
             (stream=fp, title='framfriend sys测试报告',
                                                description='处理器:Intel(R) Core(TM) '
                                                            'i5-5200U CPU @ 2.20GHz 2.20 GHz '

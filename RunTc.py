@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     # # 第二种测试报告
     runner, fp, fileName = testreport()
-    test_suite = unittest.defaultTestLoader.discover(tcPath, pattern='register.py')
+    test_suite = unittest.defaultTestLoader.discover(tcPath, pattern='registerTc.py')
     runner.run(test_suite)
     fp.close()
     # read_msg = getReceiverInfo(r'E:\python_test\framfriend_Test_Project\framfriend\data\TestData\mail_receiver.txt')

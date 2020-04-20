@@ -21,8 +21,8 @@ class Receipt_Page(BasePage):
     # 合同管理列表
     contractul = (By.XPATH, eleData.readExcel(452,3))
     #查询数据
-    valuesList = [int(queryData.readExcel(27, 1)), (queryData.readExcel(28, 1)),
-                  queryData.readExcel(29, 1),int(queryData.readExcel(30, 1))]
+    valuesList = [queryData.readExcel(27, 1), queryData.readExcel(28, 1),
+                  queryData.readExcel(29, 1), queryData.readExcel(30, 1)]
     # 查询条件 合同号,合同名称,客户名称，经办人
     query_list = [(By.XPATH, eleData.readExcel(585, 3)), (By.XPATH, eleData.readExcel(586, 3)),
                   (By.XPATH, eleData.readExcel(587, 3)), (By.XPATH, eleData.readExcel(588, 3))]
@@ -42,17 +42,19 @@ class Receipt_Page(BasePage):
                 (By.XPATH, eleData.readExcel(600, 3)),(By.XPATH, eleData.readExcel(601, 3))]
     #选框  全选  选择一项
     check_box = [(By.XPATH, eleData.readExcel(602, 3)),(By.XPATH, eleData.readExcel(603, 3))]
-
+    # 断言数据
+    assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录',
+                  '请选择一项查看']
     def inreceiptpage(self):
      '''
      进入合同收款页面
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_73').click()  # 点击合同收款
+     contractul.find_element_by_id('sidebarTree_77').click()  # 点击合同收款
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

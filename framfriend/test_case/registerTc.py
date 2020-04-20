@@ -212,21 +212,21 @@ class Register_Tc(MyunitTest):
         flag = menu.isElementExist(menu.msg_list[23])
         self.assertTrue(flag,'弹出删除确定窗口')
 
-    def test_delete_node_3(self):
-        '''选择节点点击删除确定验证'''
-        menu = Register_Page(self.driver)  # 实例化合同登记页面
-        self.login.loginFunc()  # 登录
-        menu.inregisterpage()  # 进入合同登记页面
-        time.sleep(3)
-        '''选择一项'''
-        menu.cBtn(menu.choose_list[1])
-        menu.cBtn(menu.choose_list[2])
-        menu.cBtn(menu.choose_list[3])
-        menu.cBtn(menu.button_list[2])  # 点击删除按钮
-        menu.cBtn(menu.nodebutton_list[4])#点击确定
-        time.sleep(1)
-        msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
+    # def test_delete_node_3(self):
+    #     '''选择节点点击删除确定验证'''
+    #     menu = Register_Page(self.driver)  # 实例化合同登记页面
+    #     self.login.loginFunc()  # 登录
+    #     menu.inregisterpage()  # 进入合同登记页面
+    #     time.sleep(3)
+    #     '''选择一项'''
+    #     menu.cBtn(menu.choose_list[1])
+    #     menu.cBtn(menu.choose_list[2])
+    #     menu.cBtn(menu.choose_list[3])
+    #     menu.cBtn(menu.button_list[2])  # 点击删除按钮
+    #     menu.cBtn(menu.nodebutton_list[4])#点击确定
+    #     time.sleep(1)
+    #     msgInfo = menu.getValue(*menu.msg_list[0])
+    #     self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
 
     def test_delete_node_4(self):
         '''选择节点点击删除取消验证'''
@@ -244,23 +244,108 @@ class Register_Tc(MyunitTest):
         self.assertFalse(flag, '关闭删除确定窗口')
 
     def test_alone_query_1(self):
-        """合同号，合同名称，客户名称，经办人单一条件查询"""
+        """正确合同号查询"""
         menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
         time.sleep(3)
         menu.cBtn(menu.choose_list[0])
-        for contract_information in menu.query_list:
-            menu.reset()  # 重置
-            for value in menu.valuesList:
-                menu.iQueryCondition(contract_information, value)
-                menu.cBtn(menu.button_list[3])  # 点击[查询]
-                time.sleep(3)
-                flag = menu.getValue(*menu.msg_list[30])
-                try:
-                    self.assertIn('03022',flag, '查询成功')
-                except Exception:
-                    self.assertNotIn('03022', flag, '输入的查询条件无效')
+        menu.inputValue(menu.query_list[0],menu.valuesList[0])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[30])
+        self.assertIn(menu.valuesList[0],flag, '查询成功')
+
+    def test_alone_query_1_2(self):
+        """错误合同号查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[0],menu.valuesList[1])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[39])
+        self.assertIn(menu.assertlist[0] ,flag, '合同不存在')
+
+    def test_alone_query_1_3(self):
+        """正确合同名称查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[1],menu.valuesList[1])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[30])
+        self.assertIn(menu.valuesList[1] ,flag, '查询成功')
+
+    def test_alone_query_1_4(self):
+        """错误合同名称查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[1],menu.valuesList[0])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[39])
+        self.assertIn(menu.assertlist[0] ,flag, '合同不存在')
+
+    def test_alone_query_1_5(self):
+        """正确客户名称查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[2],menu.valuesList[2])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[30])
+        self.assertIn(menu.valuesList[2] ,flag, '查询成功')
+
+    def test_alone_query_1_6(self):
+        """错误客户名称查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[2], menu.valuesList[0])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[39])
+        self.assertIn(menu.assertlist[0], flag, '合同不存在')
+
+    def test_alone_query_1_7(self):
+        """正确经办人查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[3], menu.valuesList[3])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[30])
+        self.assertIn(menu.valuesList[3], flag, '查询成功')
+
+    def test_alone_query_1_8(self):
+        """错误经办人查询"""
+        menu = Register_Page(self.driver)  # 实例化合同登记页面
+        self.login.loginFunc()  # 登录
+        menu.inregisterpage()  # 进入合同登记页面
+        time.sleep(3)
+        menu.cBtn(menu.choose_list[0])
+        menu.inputValue(menu.query_list[3], menu.valuesList[0])
+        menu.cBtn(menu.button_list[3])  # 点击[查询]
+        time.sleep(3)
+        flag = menu.getValue(*menu.msg_list[39])
+        self.assertIn(menu.assertlist[0], flag, '合同不存在')
 
     def test_time_query_2(self):
         menu = Register_Page(self.driver)  # 实例化合同登记页面
@@ -275,10 +360,11 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.time_list[1])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
+        time.sleep(1)
         menu.cBtn(menu.button_list[3])  # 点击[查询]
-        msgInfo = menu.getValue(*menu.msg_list[31])
-        self.assertEqual(msgInfo,'显示第 1 到第 10 条记录，总共 141 条记录','查询成功')
+        msgInfo = menu.getValue(*menu.msg_list[39])
+        self.assertIn(menu.assertlist[1], msgInfo,'查询成功')
 
     def test_add_contract_1(self):
         '''点击新增合同按钮'''
@@ -289,7 +375,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[4])#新增
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请先选中村庄或社区', '提示信息正确')
+        self.assertIn(menu.assertlist[2],msgInfo, '提示信息正确')
 
     def test_add_contract_2(self):
         '''选择节点点击新增合同按钮'''
@@ -316,32 +402,33 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.nodebutton_list[6])  # 太和社区
         menu.cBtn(menu.button_list[4])  # 新增
         menu.cBtn(menu.button_list[12])#提交
+        time.sleep(2)
         msgInfo = menu.getValue(*menu.msg_list[4])
-        self.assertEqual(msgInfo,'不能为空','提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3],'提示信息正确')
         msgInfo1 = menu.getValue(*menu.msg_list[5])
-        self.assertEqual(msgInfo1, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo1,menu.assertlist[3], '提示信息正确')
         msgInfo2 = menu.getValue(*menu.msg_list[6])
-        self.assertEqual(msgInfo2, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo2,menu.assertlist[3], '提示信息正确')
         msgInfo3 = menu.getValue(*menu.msg_list[7])
-        self.assertEqual(msgInfo3, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo3,menu.assertlist[3], '提示信息正确')
         msgInfo4 = menu.getValue(*menu.msg_list[8])
-        self.assertEqual(msgInfo4, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo4,menu.assertlist[3], '提示信息正确')
         msgInfo5 = menu.getValue(*menu.msg_list[9])
-        self.assertEqual(msgInfo5, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo5,menu.assertlist[3], '提示信息正确')
         msgInfo6= menu.getValue(*menu.msg_list[10])
-        self.assertEqual(msgInfo6, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo6,menu.assertlist[3], '提示信息正确')
         msgInfo7 = menu.getValue(*menu.msg_list[11])
-        self.assertEqual(msgInfo7, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo7,menu.assertlist[3], '提示信息正确')
         msgInfo8 = menu.getValue(*menu.msg_list[13])
-        self.assertEqual(msgInfo8, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo8,menu.assertlist[3], '提示信息正确')
         msgInfo9 = menu.getValue(*menu.msg_list[15])
-        self.assertEqual(msgInfo9, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo9,menu.assertlist[3], '提示信息正确')
         msgInfo10 = menu.getValue(*menu.msg_list[16])
-        self.assertEqual(msgInfo10, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo10,menu.assertlist[3], '提示信息正确')
         msgInfo11 = menu.getValue(*menu.msg_list[17])
-        self.assertEqual(msgInfo11, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo11,menu.assertlist[3], '提示信息正确')
         msgInfo12 = menu.getValue(*menu.msg_list[18])
-        self.assertEqual(msgInfo12, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo12,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_4(self):
         '''不输入合同编号新增提交'''
@@ -368,7 +455,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -378,7 +465,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])#提交
         msgInfo = menu.getValue(*menu.msg_list[4])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_5(self):
         '''不输入合同名称新增提交'''
@@ -405,7 +492,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -415,7 +502,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[5])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_6(self):
         '''不输入客户名称新增提交'''
@@ -442,7 +529,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -452,7 +539,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[6])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_7(self):
         '''不输入签订时间新增提交'''
@@ -475,7 +562,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -485,7 +572,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[7])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_8(self):
         '''不输入租赁年限新增提交'''
@@ -508,7 +595,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -518,7 +605,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[8])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_9(self):
         '''不输入租赁年限止新增提交'''
@@ -543,7 +630,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[2])
         menu.cBtn(menu.time_list[3])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -553,7 +640,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[9])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_10(self):
         '''不输入承租方新增提交'''
@@ -581,7 +668,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         #menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -591,7 +678,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[10])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_11(self):
         '''不输入合同总额新增提交'''
@@ -619,7 +706,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         #menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -629,7 +716,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[11])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_12(self):
         '''不输入收款金额新增提交'''
@@ -657,7 +744,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         #menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -667,7 +754,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[13])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_13(self):
         '''不输入收款日期新增提交'''
@@ -695,7 +782,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -705,7 +792,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[15])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_14(self):
         '''不输入合同年限新增提交'''
@@ -733,7 +820,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -743,7 +830,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[16])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_15(self):
         '''不输入经营方式新增提交'''
@@ -771,7 +858,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -781,7 +868,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[17])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3], '提示信息正确')
 
     def test_add_contract_16(self):
         '''不输入账号新增提交'''
@@ -809,7 +896,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -819,7 +906,7 @@ class Register_Tc(MyunitTest):
         #menu.inputValue(menu.input_list[10], menu.valueList[4])
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[18])
-        self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[3], '提示信息正确')
 
     def test_addtraversaltype(self):
         '''遍历合同类型选项'''
@@ -837,7 +924,6 @@ class Register_Tc(MyunitTest):
             text, contract_type = menu.contractTypeLevelOption(*contract_type)
             list_type.append(text)
         self.assertEqual('收款', list_type[0])
-        self.assertEqual('付款', list_type[1])
 
     def test_addtraversalcontractsubject(self):
         '''遍历合同主体选项'''
@@ -881,7 +967,7 @@ class Register_Tc(MyunitTest):
         self.assertEqual('招投标', list_Num[3])
         self.assertEqual('拍卖', list_Num[4])
 
-    def test_tender(self):
+    def test_pay(self):
         '''遍历收款方式选项'''
         menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
@@ -915,7 +1001,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[5], menu.reason)
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[12])
-        self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[4], '提示信息正确')
 
     def test_add_contract_18(self):
         '''输入不规则收款金额新增提交'''
@@ -931,7 +1017,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[6], menu.reason)
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[14])
-        self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[4], '提示信息正确')
 
     def test_add_contract_19(self):
         '''输入不规则账号新增提交'''
@@ -947,27 +1033,27 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[10], menu.reason)
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[19])
-        self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+        self.assertEqual(msgInfo, menu.assertlist[4], '提示信息正确')
 
-    def test_add_contract_20(self):
-        '''收款方式自定义'''
-        menu = Register_Page(self.driver)  # 实例化合同登记页面
-        self.login.loginFunc()  # 登录
-        menu.inregisterpage()  # 进入合同登记页面
-        time.sleep(3)
-        menu.cBtn(menu.choose_list[1])
-        menu.cBtn(menu.choose_list[2])
-        menu.cBtn(menu.nodebutton_list[6])  # 太和社区
-        menu.cBtn(menu.button_list[4])  # 新增
-        receive_method = self.driver.find_element_by_xpath('//*[@id="defaultForm"]/div[13]/div/select')
-        Select(receive_method).select_by_value('3')  # 获取下拉选
-        menu.cBtn(menu.Customcontract)
-        menu.cBtn(menu.choose_list[10])
-        menu.cBtn(menu.time_list[2])
-        menu.cBtn(menu.time_list[3])
-        menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
-        time.sleep(10)
+    # def test_add_contract_20(self):
+    #     '''收款方式自定义'''
+    #     menu = Register_Page(self.driver)  # 实例化合同登记页面
+    #     self.login.loginFunc()  # 登录
+    #     menu.inregisterpage()  # 进入合同登记页面
+    #     time.sleep(3)
+    #     menu.cBtn(menu.choose_list[1])
+    #     menu.cBtn(menu.choose_list[2])
+    #     menu.cBtn(menu.nodebutton_list[6])  # 太和社区
+    #     menu.cBtn(menu.button_list[4])  # 新增
+    #     receive_method = self.driver.find_element_by_xpath('//*[@id="defaultForm"]/div[13]/div/select')
+    #     Select(receive_method).select_by_value('3')  # 获取下拉选
+    #     menu.cBtn(menu.Customcontract)
+    #     menu.cBtn(menu.choose_list[10])
+    #     menu.cBtn(menu.time_list[2])
+    #     menu.cBtn(menu.time_list[3])
+    #     menu.cBtn(menu.time_list[4])
+    #     menu.cBtn(menu.time_list[7])
+    #     time.sleep(10)
 
     def test_add_detail_21(self):
         '''明细不完整'''
@@ -982,7 +1068,7 @@ class Register_Tc(MyunitTest):
         menu.inputValue(menu.input_list[13],menu.reason)
         menu.cBtn(menu.button_list[12])  # 提交
         msgInfo = menu.getValue(*menu.msg_list[32])
-        self.assertEqual(msgInfo,'×\n提示! 明细信息请填写完整','提示信息正确')
+        self.assertIn(menu.assertlist[5],msgInfo,'提示信息正确')
 
     def test_add_uploadimage_22(self):
         '''上传图片'''
@@ -997,7 +1083,7 @@ class Register_Tc(MyunitTest):
         menu.upload()
         time.sleep(8)
         msgInfo = menu.getValue(*menu.msg_list[33])
-        self.assertIn('Wallpaper.jpg\nWallpaper1.jpg\nWallpaper2.jpg',msgInfo,'图片上传成功')
+        self.assertIn('1.png\n2.png\n3.png',msgInfo,'图片上传成功')
 
     def test_add_deleteimage_23(self):
         '''上传图片删除'''
@@ -1013,7 +1099,7 @@ class Register_Tc(MyunitTest):
         time.sleep(8)
         menu.cBtn(menu.deleteimg)
         msgInfo = menu.getValue(*menu.msg_list[33])
-        self.assertIn('Wallpaper.jpg\nWallpaper1.jpg',msgInfo,'图片删除成功')
+        self.assertIn('1.png\n2.png',msgInfo,'图片删除成功')
 
     def test_add_contract_24(self):
         '''成功新增提交'''
@@ -1040,7 +1126,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -1051,7 +1137,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[12])  # 提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 新增成功！', '提示信息正确')
+        self.assertIn(menu.assertlist[6],msgInfo, '提示信息正确')
 
     def test_add_contract_25(self):
         '''合同号重复新增提交'''
@@ -1078,7 +1164,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -1089,7 +1175,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[12])  # 提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[34])
-        self.assertEqual(msgInfo, '×\n提示! 合同号PZ07重复', '提示信息正确')
+        self.assertIn(menu.assertlist[7],msgInfo, '提示信息正确')
 
     def test_add_contract_26(self):
         '''取消新增'''
@@ -1114,7 +1200,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[5])
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选中一项内容！', '提示信息正确')
+        self.assertIn(menu.assertlist[8],msgInfo, '提示信息正确')
 
     def test_update_contract_2(self):
         '''全选点击修改'''
@@ -1129,7 +1215,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[5])
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选中一项内容进行操作！', '提示信息正确')
+        self.assertIn(menu.assertlist[9],msgInfo, '提示信息正确')
 
     def test_update_contract_3(self):
         '''选择一项点击修改'''
@@ -1166,31 +1252,31 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[5])
         menu.cBtn(menu.button_list[14])#提交
         msgInfo = menu.getValue(*menu.msg_list[4])
-        self.assertEqual(msgInfo,'不能为空','提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[3],'提示信息正确')
         msgInfo1 = menu.getValue(*menu.msg_list[5])
-        self.assertEqual(msgInfo1, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo1,menu.assertlist[3], '提示信息正确')
         msgInfo2 = menu.getValue(*menu.msg_list[6])
-        self.assertEqual(msgInfo2, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo2,menu.assertlist[3], '提示信息正确')
         msgInfo3 = menu.getValue(*menu.msg_list[7])
-        self.assertEqual(msgInfo3, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo3,menu.assertlist[3], '提示信息正确')
         msgInfo4 = menu.getValue(*menu.msg_list[8])
-        self.assertEqual(msgInfo4, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo4,menu.assertlist[3], '提示信息正确')
         msgInfo5 = menu.getValue(*menu.msg_list[9])
-        self.assertEqual(msgInfo5, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo5,menu.assertlist[3], '提示信息正确')
         msgInfo6= menu.getValue(*menu.msg_list[10])
-        self.assertEqual(msgInfo6, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo6,menu.assertlist[3], '提示信息正确')
         msgInfo7 = menu.getValue(*menu.msg_list[11])
-        self.assertEqual(msgInfo7, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo7,menu.assertlist[3], '提示信息正确')
         msgInfo8 = menu.getValue(*menu.msg_list[13])
-        self.assertEqual(msgInfo8, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo8,menu.assertlist[3], '提示信息正确')
         # msgInfo9 = menu.getValue(*menu.msg_list[15])
         # self.assertEqual(msgInfo9, '不能为空', '提示信息正确')
         msgInfo10 = menu.getValue(*menu.msg_list[16])
-        self.assertEqual(msgInfo10, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo10,menu.assertlist[3], '提示信息正确')
         msgInfo11 = menu.getValue(*menu.msg_list[17])
-        self.assertEqual(msgInfo11, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo11,menu.assertlist[3], '提示信息正确')
         msgInfo12 = menu.getValue(*menu.msg_list[35])
-        self.assertEqual(msgInfo12, '不能为空', '提示信息正确')
+        self.assertEqual(msgInfo12,menu.assertlist[3], '提示信息正确')
 
     def test_update_contract_5(self):
         '''修改总金额非数字验证'''
@@ -1206,7 +1292,7 @@ class Register_Tc(MyunitTest):
         menu.clearValue(menu.input_list[5])
         menu.inputValue(menu.input_list[5],menu.reason)
         msgInfo = menu.getValue(*menu.msg_list[12])
-        self.assertEqual(msgInfo,'请输入有效的数字','提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[4],'提示信息正确')
 
     def test_update_contract_6(self):
         '''修改合同账号非数字验证'''
@@ -1222,7 +1308,7 @@ class Register_Tc(MyunitTest):
         menu.clearValue(menu.input_list[6])
         menu.inputValue(menu.input_list[6],menu.reason)
         msgInfo = menu.getValue(*menu.msg_list[14])
-        self.assertEqual(msgInfo,'请输入有效的数字','提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[4],'提示信息正确')
 
     def test_update_contract_7(self):
         '''修改收款金额非数字验证'''
@@ -1238,7 +1324,7 @@ class Register_Tc(MyunitTest):
         menu.clearValue(menu.input_list[22])
         menu.inputValue(menu.input_list[22],menu.reason)
         msgInfo = menu.getValue(*menu.msg_list[36])
-        self.assertEqual(msgInfo,'请输入有效的数字','提示信息正确')
+        self.assertEqual(msgInfo,menu.assertlist[4],'提示信息正确')
 
     def test_update_contract_8(self):
         '''合同明细不完整验证'''
@@ -1255,7 +1341,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[14])  # 提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[32])
-        self.assertEqual(msgInfo, '×\n提示! 明细信息请填写完整', '提示信息正确')
+        self.assertIn(menu.assertlist[4],msgInfo, '提示信息正确')
 
     def test_update_contract_9(self):
         '''修改上传图片'''
@@ -1271,7 +1357,7 @@ class Register_Tc(MyunitTest):
         menu.upload()
         time.sleep(8)
         msgInfo = menu.getValue(*menu.msg_list[33])
-        self.assertIn('Wallpaper.jpg\nWallpaper1.jpg\nWallpaper2.jpg', msgInfo, '图片上传成功')
+        self.assertIn('1.png\n2.png\n3.png', msgInfo, '图片上传成功')
 
     def test_update_contract_10(self):
         '''修改上传图片删除'''
@@ -1288,7 +1374,7 @@ class Register_Tc(MyunitTest):
         time.sleep(8)
         menu.cBtn(menu.deleteimg)
         msgInfo = menu.getValue(*menu.msg_list[33])
-        self.assertIn('Wallpaper.jpg\nWallpaper1.jpg', msgInfo, '图片删除成功')
+        self.assertIn('1.png\n2.png', msgInfo, '图片删除成功')
 
     def test_update_contract_11(self):
         '''正常修改'''
@@ -1317,7 +1403,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -1328,7 +1414,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[14])  # 提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 修改成功！', '提示信息正确')
+        self.assertIn(menu.assertlist[10],msgInfo, '提示信息正确')
 
     def test_update_contract_12(self):
         '''合同编号重复修改'''
@@ -1348,15 +1434,15 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.time_list[2])
         menu.cBtn(menu.time_list[3])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[8])
         menu.cBtn(menu.time_list[2])
         menu.cBtn(menu.time_list[3])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.cBtn(menu.choose_list[9])
         menu.cBtn(menu.time_list[4])
-        menu.cBtn(menu.time_list[7])
+        #menu.cBtn(menu.time_list[7])
         menu.inputValue(menu.input_list[3], menu.reason)
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.inputValue(menu.input_list[6], menu.valueList[0])
@@ -1367,7 +1453,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[14])  # 提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[34])
-        self.assertEqual(msgInfo, '×\n提示! 合同号PZ07重复', '提示信息正确')
+        self.assertIn(menu.assertlist[7],msgInfo, '提示信息正确')
 
     def test_update_contract_13(self):
         '''取消修改'''
@@ -1393,7 +1479,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[6])#查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo,'×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[11],msgInfo,'提示信息正确')
 
     def test_check_contract_2(self):
         '''全选点击查看明细'''
@@ -1408,7 +1494,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[6])#查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[11],msgInfo,'提示信息正确')
 
     def test_check_contract_3(self):
         '''选择一项点击查看明细'''
@@ -1455,7 +1541,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[17])#修改
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[37])
-        self.assertEqual(msgInfo,'×\n提示! 请选中一项内容！','提示信息正确')
+        self.assertIn(menu.assertlist[8],msgInfo,'提示信息正确')
 
     def test_check_contract_6(self):
         '''全选查看明细修改'''
@@ -1473,7 +1559,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[17])  # 修改
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[37])
-        self.assertEqual(msgInfo, '×\n提示! 请选中一项内容进行修改！', '提示信息正确')
+        self.assertIn(menu.assertlist[8],msgInfo, '提示信息正确')
 
     def test_check_contract_7(self):
         '''全选查看明细修改'''
@@ -1584,7 +1670,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[7])  # 查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[11],msgInfo,'提示信息正确')
 
     def test_check_contract_13(self):
         '''全选点击明细2'''
@@ -1599,7 +1685,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[7])  # 查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[11],msgInfo,'提示信息正确')
 
     def test_check_contract_14(self):
         '''选择一项点击明细2'''
@@ -1639,7 +1725,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[8])#点击删除
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo,'×\n提示! 请选中一项内容！','提示信息正确')
+        self.assertIn(menu.assertlist[8],msgInfo,'提示信息正确')
 
     def test_delete_contract_2(self):
         '''选择删除项删除'''
@@ -1657,26 +1743,26 @@ class Register_Tc(MyunitTest):
         msg = menu.isElementExist(menu.msg_list[28])
         self.assertTrue(msg,'弹出删除窗口')
 
-    def test_delete_contract_3(self):
-        '''选择删除项确定删除'''
-        menu = Register_Page(self.driver)  # 实例化合同登记页面
-        self.login.loginFunc()  # 登录
-        menu.inregisterpage()  # 进入合同登记页面
-        time.sleep(3)
-        menu.cBtn(menu.choose_list[1])
-        menu.cBtn(menu.choose_list[2])
-        menu.cBtn(menu.nodebutton_list[6])  # 太和社区
-        menu.jScript('window.scrollTo(0,document.body.scrollHeight)')  # 滚动到页面底部
-        menu.cBtn(menu.choose_list[14])
-        menu.jScript('window.scrollTo(document.body.scrollHeight,0)')  # 滚动到页面顶部
-        menu.cBtn(menu.button_list[8])  # 点击删除
-        menu.cBtn(menu.button_list[21]) #确定
-        time.sleep(1)
+    # def test_delete_contract_3(self):
+    #     '''选择删除项确定删除'''
+    #     menu = Register_Page(self.driver)  # 实例化合同登记页面
+    #     self.login.loginFunc()  # 登录
+    #     menu.inregisterpage()  # 进入合同登记页面
+    #     time.sleep(3)
+    #     menu.cBtn(menu.choose_list[1])
+    #     menu.cBtn(menu.choose_list[2])
+    #     menu.cBtn(menu.nodebutton_list[6])  # 太和社区
+    #     menu.jScript('window.scrollTo(0,document.body.scrollHeight)')  # 滚动到页面底部
+    #     menu.cBtn(menu.choose_list[14])
+    #     menu.jScript('window.scrollTo(document.body.scrollHeight,0)')  # 滚动到页面顶部
+    #     menu.cBtn(menu.button_list[8])  # 点击删除
+    #     menu.cBtn(menu.button_list[21]) #确定
+    #     time.sleep(1)
         # msgInfo = menu.getValue(*menu.msg_list[0])
         # self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
 
     def test_delete_contract_4(self):
-        '''选择删除项确定删除'''
+        '''选择删除项取消删除'''
         menu = Register_Page(self.driver)  # 实例化合同登记页面
         self.login.loginFunc()  # 登录
         menu.inregisterpage()  # 进入合同登记页面
@@ -1700,7 +1786,7 @@ class Register_Tc(MyunitTest):
         time.sleep(3)
         menu.cBtn(menu.button_list[9])#模板导出
         time.sleep(2)
-        print(os.path.exists('E:\\MyDownloads\\合同批量导入表.xlsx'))  # 检查是否已导出
+        assert os.path.exists('F:\\TestDownloads\\合同批量导入表.xlsx')  # 检查是否已导出
 
     def test_import_contract_1(self):
         '''点击数据导入'''
@@ -1722,7 +1808,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[24])  # 点击提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[32])
-        self.assertEqual(msgInfo, '×\n提示! 导入失败', '提示信息正确')
+        self.assertIn(menu.assertlist[12],msgInfo, '提示信息正确')
 
     def test_import_contract_3(self):
         '''取消文件上传'''
@@ -1746,7 +1832,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[24])  # 点击提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[32])
-        self.assertEqual(msgInfo, '×\n提示! 导入失败', '提示信息正确')
+        self.assertIn(menu.assertlist[12],msgInfo, '提示信息正确')
 
     def test_import_contract_99(self):
         '''正确文件上传'''
@@ -1759,7 +1845,7 @@ class Register_Tc(MyunitTest):
         menu.cBtn(menu.button_list[24])  # 点击提交
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 导入成功！', '提示信息正确')
+        self.assertIn(menu.assertlist[13],msgInfo, '提示信息正确')
 
 if __name__=='__main__':
     pass

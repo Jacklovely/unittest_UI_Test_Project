@@ -24,6 +24,21 @@ class Register_Page(BasePage):
     reason = time.strftime('%Y-%m-%d:%H:%M:%S') + '测试'
     reason1 = time.strftime('%Y%m%d%H%M%S')
     valueList = ['10000','test','1','10-1','6535456754434556766','PZ07']
+    # 断言数据
+    assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录',
+                  '显示第 1 到第 10 条记录，总共 150 条记录',
+                  '请先选中村庄或社区',
+                  '不能为空',
+                  '请输入有效的数字',
+                  '明细信息请填写完整',
+                  '新增成功！',
+                  '合同号PZ07重复',
+                  '请选中一项内容！',
+                  ' 请选中一项内容进行操作！',
+                  '修改成功！',
+                  '请选择一项查看',
+                  '导入失败',
+                  '导入成功！']
 
     # 合同管理
     contract = (By.XPATH, eleData.readExcel(17, 3))
@@ -166,11 +181,12 @@ class Register_Page(BasePage):
          (By.XPATH, eleData.readExcel(581, 3)),  #合同账号为空验证35
          (By.XPATH, eleData.readExcel(582, 3)),  #合同账号非数字验证36
          (By.XPATH, eleData.readExcel(583, 3)),  #明细刷新修改验证37
-         (By.XPATH, eleData.readExcel(584, 3))]  #明细页面记录38
+         (By.XPATH, eleData.readExcel(584, 3)),  #明细页面记录38
+         (By.XPATH, eleData.readExcel(785, 3))]  #查询为空校验39
 
     #合同类型选项
-    contractTypeNum = [(By.XPATH,'//*[@id="defaultForm"]/div[2]/div/select/option[1]'),#收款
-                     (By.XPATH, '//*[@id="defaultForm"]/div[2]/div/select/option[2]')]#付款
+    contractTypeNum = [(By.XPATH,'//*[@id="defaultForm"]/div[2]/div/select/option')]#收款
+                       #(By.XPATH,'//*[@id="defaultForm"]/div[2]/div/select/option[2]')]#付款
     #合同主体选项
     contractsubjectNum = [(By.XPATH, '//*[@id="defaultForm"]/div[4]/div/select/option[1]'),#房屋租赁
                           (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/select/option[2]'),#场地租赁
@@ -305,9 +321,9 @@ class Register_Page(BasePage):
         '''
         d = self.driver.find_element_by_xpath('//*[@id="picture"]/div[1]/input[1]')
         self.driver.execute_script('arguments[0].removeAttribute(\"style\")', d)
-        list = [r'E:\\MyDownloads\\Wallpaper.jpg',
-                r'E:\\MyDownloads\\Wallpaper1.jpg',
-                r'E:\\MyDownloads\\Wallpaper2.jpg']
+        list = [r'F:\\TestDownloads\\1.png',
+                r'F:\\TestDownloads\\2.png',
+                r'F:\\TestDownloads\\3.png']
         for listimage in list:
             self.findElement(*self.button_list[11]).send_keys(listimage)  # 定位上传按钮，添加本地文件
 
