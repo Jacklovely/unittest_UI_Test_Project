@@ -41,10 +41,10 @@ class PayDetailedQuery_Page(BasePage):
                     [(By.XPATH, eleData.readExcel(793, 3)),#存在查询
                      (By.XPATH, eleData.readExcel(794, 3))]#不存在查询
         #测试数据
-        valuelist = ['测试', '98032230389911653019', '黄岛一', '6215210200005034', '沂南县蒲汪镇大王庄村股份经济合作社',
-                     '35170550687795445677']
+        valuelist = ['测试人员', '98032230389911653018', '黄岛一', '6215210200005034', '沂南县蒲汪镇大王庄村股份经济合作社',
+                     '交易已受理']
         # 断言数据
-        assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录']
+        assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录','2020-04-03测试']
 
 
         def inpaydetailedquery(self):

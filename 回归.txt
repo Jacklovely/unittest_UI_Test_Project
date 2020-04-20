@@ -6,7 +6,3 @@ detailQuery_Tc   DetailQuery_Page    银行名片查询
 issuingTc         Issuing_Page   母子代付
 paymentqueryTc    paymentquery_page 代付结果查询
 paydetailedQueryTc paydetailedQuery_page 代付明细查询
-
-
-
-

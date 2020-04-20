@@ -221,10 +221,10 @@ class Register_Page(BasePage):
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_71_a').click()  # 点击合同登记
+     contractul.find_element_by_id('sidebarTree_75_a').click()  # 点击合同登记
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))
@@ -349,7 +349,7 @@ class Register_Page(BasePage):
         '''
         js = 'document.getElementById("file_input").style.display="block";'
         self.jScript(js)
-        self.findElement(*self.button_list[23]).send_keys('E:\\MyDownloads\\20190923034151.xls')  # 定位上传按钮，添加本地文件
+        self.findElement(*self.button_list[23]).send_keys('F:\TestDownloads\银农直联代付模板.xlsx')  # 定位上传按钮，添加本地文件
         time.sleep(3)
 
     def uploadTrue(self):
@@ -359,7 +359,7 @@ class Register_Page(BasePage):
         '''
         js = 'document.getElementById("file_input").style.display="block";'
         self.jScript(js)
-        self.findElement(*self.button_list[23]).send_keys('E:\\MyDownloads\\合同导入.xlsx')  # 定位上传按钮，添加本地文件
+        self.findElement(*self.button_list[23]).send_keys('F:\TestDownloads\合同批量导入表.xlsxs')  # 定位上传按钮，添加本地文件
         time.sleep(3)
 
 if __name__=='__main__':
