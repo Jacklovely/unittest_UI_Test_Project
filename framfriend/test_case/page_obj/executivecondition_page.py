@@ -38,6 +38,10 @@ class ExecutiveCondition_Page(BasePage):
     msg_list = [(By.XPATH, eleData.readExcel(663, 3)),#查询验证
                 (By.XPATH, eleData.readExcel(664, 3)),#右上角验证
                 (By.XPATH, eleData.readExcel(665, 3))]#明细窗口
+    # 断言数据
+    assertlist = ['请选择一项查看',
+                  '显示第 1 到第 0 条记录，总共 0 条记录',
+                  '显示第 1 到第 10 条记录，总共 294 条记录']
 
     def inexecutiveconditionpage(self):
      '''
@@ -45,10 +49,10 @@ class ExecutiveCondition_Page(BasePage):
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_78').click()  # 点击执行情况
+     contractul.find_element_by_id('sidebarTree_82').click()  # 点击执行情况
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

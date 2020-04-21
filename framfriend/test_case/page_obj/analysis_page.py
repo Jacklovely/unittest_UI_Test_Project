@@ -40,17 +40,19 @@ class Analysis_Page(BasePage):
     msg_list = [(By.XPATH, eleData.readExcel(651, 3)),#查询验证
                 (By.XPATH, eleData.readExcel(652, 3)),#右上角验证
                 (By.XPATH, eleData.readExcel(653, 3))]#明细窗口
-
+    # 断言数据
+    assertlist = ['显示第 1 到第 10 条记录，总共 184 条记录',
+                  '请选择一项查看']
     def inanalysispage(self):
      '''
      进入年限分析页面
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_76').click()  # 点击年限分析
+     contractul.find_element_by_id('sidebarTree_80').click()  # 点击年限分析
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

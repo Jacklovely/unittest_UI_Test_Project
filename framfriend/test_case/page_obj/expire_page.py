@@ -12,7 +12,9 @@ from framfriend.test_case.models.log import Logger
 
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 
+
 class Expire_Page(BasePage):
+    assertlist = ['请选择一项查看']
     '''
         到期提醒
     '''
@@ -33,10 +35,10 @@ class Expire_Page(BasePage):
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_74').click()  # 点击到期提醒
+     contractul.find_element_by_id('sidebarTree_78').click()  # 点击到期提醒
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

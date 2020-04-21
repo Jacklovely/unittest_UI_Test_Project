@@ -25,7 +25,7 @@ class Analysis_Tc(MyunitTest):
         menu.cBtn(menu.button_list[1])
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo,'显示第 1 到第 10 条记录，总共 67 条记录','查询成功')
+        self.assertIn(menu.assertlist[0],msgInfo,'查询成功')
 
     def test_click_detail_1(self):
         '''点击明细'''
@@ -37,7 +37,7 @@ class Analysis_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[1])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[1],msgInfo,'提示信息正确')
 
     def test_click_detail_2(self):
         '''全选点击明细'''
@@ -50,7 +50,7 @@ class Analysis_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[1])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[1],msgInfo,'提示信息正确')
 
     def test_click_detail_3(self):
         '''选择一项点击明细'''

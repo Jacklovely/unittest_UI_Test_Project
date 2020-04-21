@@ -7,3 +7,10 @@ issuingTc         Issuing_Page   母子代付
 paymentqueryTc    paymentquery_page 代付结果查询
 paydetailedQueryTc paydetailedQuery_page 代付明细查询
 registerTc register_oage  合同登记
+receiptTc receipt_page  合同收款
+expireTC expire_page   到期提醒
+messagereceiver_Tc messagereceiver_page 预警短信接收人
+analysisTc   analysis_page   年限分析
+executiveconditionTc  executivecondition_page 执行情况
+generalledgerTc generalledger_page 台账
+detailaccountTc detailaccount_page 明细查询

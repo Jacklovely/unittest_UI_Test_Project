@@ -19,7 +19,7 @@ class Expire_Tc(MyunitTest):
         menu.cBtn(menu.button[1])#查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo,'×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[0],msgInfo,'提示信息正确')
 
     def test_check_contract_2(self):
         '''全选点击查看明细'''
@@ -32,7 +32,7 @@ class Expire_Tc(MyunitTest):
         menu.cBtn(menu.button[1])#查看明细
         time.sleep(1)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertEqual(msgInfo, '×\n提示! 请选择一项查看','提示信息正确')
+        self.assertIn(menu.assertlist[0],msgInfo,'提示信息正确')
 
     def test_check_contract_3(self):
         '''选择一项点击查看明细'''

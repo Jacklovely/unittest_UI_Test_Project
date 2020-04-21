@@ -61,6 +61,18 @@ class GeneralLedger_Page(BasePage):
                  (By.XPATH, eleData.readExcel(719, 3))]#确定
     #验证
     msgInfo = (By.XPATH, eleData.readExcel(720, 3))
+    # 断言数据
+    assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录',#0查询为空
+                  '显示第 1 到第 10 条记录，总共 223 条记录',#1时间查询
+                  '显示第 1 到第 10 条记录，总共 163 条记录',#2房屋租赁查询
+                  '显示第 1 到第 10 条记录，总共 106 条记录',#3场地租赁查询
+                  '显示第 1 到第 3 条记录',#4土地承包查询
+                  '显示第 1 到第 10 条记录，总共 21 条记录',#5资产查询
+                  '显示第 1 到第 10 条记录，总共 157 条记录',#6公开协作查询
+                  '显示第 1 到第 8 条记录',#7公开竞标查询
+                  '显示第 1 到第 10 条记录，总共 129 条记录',#8其他查询
+                  '显示第 1 到第 10 条记录，总共 294 条记录'#代付款9
+                    ]
 
     def ingeneralledgerpage(self):
         '''
@@ -68,14 +80,14 @@ class GeneralLedger_Page(BasePage):
         :return:
         '''
         leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-        leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+        leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
         ele = self.findElement(*self.statistics)  # 定位到元素
         self.driver.execute_script('arguments[0].scrollIntoView(false)', ele)
         time.sleep(1)
         contractul = self.findElement(*self.contractul)
-        contractul.find_element_by_id('sidebarTree_79_a').click()  # 点击合同台账
+        contractul.find_element_by_id('sidebarTree_83_a').click()  # 点击合同台账
         accountsul = self.findElement(*self.contractul)
-        accountsul.find_element_by_id('sidebarTree_80').click() #总账
+        accountsul.find_element_by_id('sidebarTree_84').click() #总账
         time.sleep(1)
         log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
             sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

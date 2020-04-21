@@ -25,9 +25,11 @@ class DetailAccount_Page(BasePage):
     contractul = (By.XPATH, eleData.readExcel(452,3))
     #合同台账列表
     accountsul = (By.XPATH, eleData.readExcel(692,3))
+    # 统计
+    statistics = (By.XPATH, eleData.readExcel(469, 3))
     # 查询数据
-    valuesList = [int(queryData.readExcel(33, 1)), (queryData.readExcel(34, 1)),
-                  queryData.readExcel(35, 1), int(queryData.readExcel(36, 1))]
+    valuesList = [queryData.readExcel(33, 1), (queryData.readExcel(34, 1)),
+                  queryData.readExcel(35, 1), queryData.readExcel(36, 1)]
     # 查询条件 合同号,合同名称,客户名称，合同年限
     query_list = [(By.XPATH, eleData.readExcel(668, 3)), (By.XPATH, eleData.readExcel(669, 3)),
                   (By.XPATH, eleData.readExcel(670, 3)), (By.XPATH, eleData.readExcel(671, 3))]
@@ -61,19 +63,26 @@ class DetailAccount_Page(BasePage):
     msg_list = [(By.XPATH, eleData.readExcel(689, 3)),#查询验证
                 (By.XPATH, eleData.readExcel(690, 3)),#时间查询验证
                 (By.XPATH, eleData.readExcel(691, 3))]#明细窗口
-
+    assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录',
+                  '显示第 1 到第 5 条记录，总共 5 条记录',
+                  '显示第 1 到第 10 条记录，总共 294 条记录'
+                  ]
     def indetailaccountpage(self):
         '''
         进入明细账页面
         :return:
         '''
         leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-        leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+        leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
+        time.sleep(1)
+        ele = self.findElement(*self.statistics)  # 定位到元素
+        self.driver.execute_script('arguments[0].scrollIntoView(false)', ele)
         time.sleep(1)
         contractul = self.findElement(*self.contractul)
-        contractul.find_element_by_id('sidebarTree_79_a').click()  # 点击合同台账
+        contractul.find_element_by_id('sidebarTree_83_a').click()  # 点击合同台账
+        time.sleep(2)
         accountsul = self.findElement(*self.contractul)
-        accountsul.find_element_by_id('sidebarTree_81_a').click() # 明细账
+        accountsul.find_element_by_id('sidebarTree_85').click() # 明细账
         time.sleep(1)
         log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
             sys._getframe().f_code.co_name, self.menuList[0], self.contractul))

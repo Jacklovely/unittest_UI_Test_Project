@@ -29,6 +29,19 @@ class MessagerEceiver_Page(BasePage):
     valuesList = [(queryData.readExcel(31, 1)),(queryData.readExcel(32, 1))]
     # 查询条件 姓名  备注
     query_list = [(By.XPATH, eleData.readExcel(607,3)), (By.XPATH, eleData.readExcel(608,3))]
+    # 断言数据
+    assertlist = ['显示第 1 到第 0 条记录，总共 0 条记录',
+                  '请选择一项查看',
+                  '测试',
+                  '测试人员',
+                  '手机号不能为空',
+                  '不能为空',
+                  '请输入正确的手机号',
+                  '新增成功！',
+                  '请选中一项内容！',
+                  '请选中一项内容进行操作！',
+                  '修改成功！',
+                  '删除成功！']
     #输入框
     input_list = [(By.XPATH, eleData.readExcel(609,3)),#姓名（增0
                   (By.XPATH, eleData.readExcel(610,3)),#手机号（增1
@@ -63,7 +76,8 @@ class MessagerEceiver_Page(BasePage):
                 (By.XPATH, eleData.readExcel(637,3)),#手机号为空（改10
                 (By.XPATH, eleData.readExcel(638,3)),#不规则手机号（改11
                 (By.XPATH, eleData.readExcel(639,3)),#备注为空（改12
-                (By.XPATH, eleData.readExcel(640, 3))]#删除验证13
+                (By.XPATH, eleData.readExcel(640, 3)),#删除验证13
+                (By.XPATH, eleData.readExcel(600, 3))]#错误查询验证14
 
     def inmessagereceiverpage(self):
      '''
@@ -71,10 +85,10 @@ class MessagerEceiver_Page(BasePage):
      :return:
      '''
      leftMenu = self.findElement(*self.menuList[0])  # 左侧菜单栏
-     leftMenu.find_element_by_id('sidebarTree_70_a').click()  # 点击合同管理
+     leftMenu.find_element_by_id('sidebarTree_74_a').click()  # 点击合同管理
      time.sleep(1)
      contractul = self.findElement(*self.contractul)
-     contractul.find_element_by_id('sidebarTree_75').click()  # 点击预警短信接收人
+     contractul.find_element_by_id('sidebarTree_79').click()  # 点击预警短信接收人
      time.sleep(1)
      log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
       sys._getframe().f_code.co_name, self.menuList[0], self.contractul))
