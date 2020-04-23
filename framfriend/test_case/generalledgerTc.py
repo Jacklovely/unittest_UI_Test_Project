@@ -1,5 +1,5 @@
 '''
-Code description：明细账模块 testcase
+Code description：总账模块 testcase
 Create time：
 Developer：
 '''

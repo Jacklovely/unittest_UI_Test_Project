@@ -13,4 +13,6 @@ messagereceiver_Tc messagereceiver_page 预警短信接收人
 analysisTc   analysis_page   年限分析
 executiveconditionTc  executivecondition_page 执行情况
 generalledgerTc generalledger_page 台账
-detailaccountTc detailaccount_page 明细查询
+detailaccountTc termwarning_page 明细查询
+termwarningTc   termwarning_page 合同期限预警取消
+
