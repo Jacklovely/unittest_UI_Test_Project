@@ -5,7 +5,7 @@ Developer：
 '''
 
 import time
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.switch_page import SwitchPage
 class Switch_Tc(MyunitTest):
     '''风格切换测试用例'''

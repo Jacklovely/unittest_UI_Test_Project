@@ -30,6 +30,7 @@ class ReadExcel(object):
         else:
             log.logger.info('initing class ReadExcel')
 
+    # 读excel中的数据
     def readExcel(self,rownum,colnum):
         """
 

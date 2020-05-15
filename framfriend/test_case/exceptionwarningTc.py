@@ -7,7 +7,7 @@ import time
 
 from selenium.webdriver.support.select import Select
 
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.exceptionwarning_page import Exceptionwarning_page
 class DetailAccount_Tc(MyunitTest):
     '''合同异常预警取消用例'''

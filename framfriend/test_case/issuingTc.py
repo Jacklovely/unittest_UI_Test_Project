@@ -8,7 +8,7 @@ import time
 
 from selenium.webdriver.support.select import Select
 
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.issuing_page import Issuing_Page
 
 class Issuing_Tc(MyunitTest):

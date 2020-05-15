@@ -6,7 +6,7 @@ Developer:
 import os
 import time
 from selenium.webdriver.support.select import Select
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.paydetailedquery_page import PayDetailedQuery_Page
 
 class PayDetaileQuery_TC(MyunitTest):

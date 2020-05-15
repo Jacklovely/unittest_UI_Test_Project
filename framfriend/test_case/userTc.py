@@ -7,7 +7,7 @@ Developer：
 import time
 
 from selenium.webdriver.support.select import Select
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.user_page import UserPage
 
 class User_TC(MyunitTest):

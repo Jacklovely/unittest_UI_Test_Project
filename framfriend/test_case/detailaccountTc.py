@@ -7,7 +7,7 @@ import time
 
 from selenium.webdriver.support.select import Select
 
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.detailaccount_page import DetailaCcount_page
 class DetailAccount_Tc(MyunitTest):
     '''执行明细账用例'''

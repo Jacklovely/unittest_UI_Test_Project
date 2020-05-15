@@ -8,7 +8,7 @@ import unittest
 import time
 import logging
 import sys
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.models.log import Logger
 log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 

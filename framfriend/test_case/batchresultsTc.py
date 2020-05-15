@@ -5,7 +5,7 @@ Developer：
 '''
 import os
 import time
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.batchResults_page import BatchResults_Page
 
 class BatchResult_Tc(MyunitTest):

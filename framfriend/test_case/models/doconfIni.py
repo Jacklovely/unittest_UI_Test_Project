@@ -19,6 +19,7 @@ class DoConfIni(object):
         """
         self.cf = configparser.ConfigParser()
 
+    # 从ini文件中读数据
     def getConfValue(self,filename,section,name):
         """
 
@@ -36,6 +37,7 @@ class DoConfIni(object):
             log.logger.info('read excel value [%s] successed! ' %value)
             return value
 
+    # 向ini文件中写数据
     def writeConfValue(self,filename, section, name, value):
         """
 

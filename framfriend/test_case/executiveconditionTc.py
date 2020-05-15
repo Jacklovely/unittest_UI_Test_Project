@@ -4,7 +4,7 @@ Create time：
 Developer：
 '''
 import time
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.executivecondition_page import ExecutiveCondition_Page
 
 class ExecutiveCondition_Tc(MyunitTest):

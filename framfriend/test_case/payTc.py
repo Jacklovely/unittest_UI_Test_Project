@@ -4,7 +4,7 @@ Create time：
 Developer：
 '''
 import time
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.pay_page import Pay_Page
 
 class Pay_Tc(MyunitTest):

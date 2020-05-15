@@ -36,45 +36,45 @@ class Logger(object):
         # self.logger.addHandler(sh)
         self.logger.addHandler(fh)
 
-    # def debug(self, message):
-    #     """
-    #
-    #     :param message:
-    #     :return:
-    #     """
-    #     self.logger.debug(message)
-    #
-    # def info(self,message):
-    #     """
-    #
-    #     :param message:
-    #     :return:
-    #     """
-    #     self.logger.info(message)
-    #
-    # def warn(self,message):
-    #     """
-    #
-    #     :param message:
-    #     :return:
-    #     """
-    #     self.logger.warning(message)
-    #
-    # def error(self,message):
-    #     """
-    #
-    #     :param message:
-    #     :return:
-    #     """
-    #     self.logger.error(message)
-    #
-    # def criti(self,message):
-    #     """
-    #
-    #     :param message:
-    #     :return:
-    #     """
-    #     self.logger.critical(message)
+    def debug(self, message):
+        """
+
+        :param message:
+        :return:
+        """
+        self.logger.debug(message)
+
+    def info(self,message):
+        """
+
+        :param message:
+        :return:
+        """
+        self.logger.info(message)
+
+    def warn(self,message):
+        """
+
+        :param message:
+        :return:
+        """
+        self.logger.warning(message)
+
+    def error(self,message):
+        """
+
+        :param message:
+        :return:
+        """
+        self.logger.error(message)
+
+    def criti(self,message):
+        """
+
+        :param message:
+        :return:
+        """
+        self.logger.critical(message)
 
 if __name__ == '__main__':
     logger = Logger("fox",CmdLevel=logging.DEBUG, FileLevel=logging.DEBUG)

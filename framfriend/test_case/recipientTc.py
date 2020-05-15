@@ -4,7 +4,7 @@ Create time：
 Developer：
 '''
 import time
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.recipient_page import Recipient_Page
 
 class Recipient_Tc(MyunitTest):

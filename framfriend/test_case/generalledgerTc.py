@@ -6,7 +6,7 @@ Developer：
 import time
 
 from selenium.webdriver.support.select import Select
-from framfriend.test_case.models.myunit import MyunitTest
+from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.generalledger_page import GeneralLedger_Page
 class GeneralLedger_Tc(MyunitTest):
     '''总账用例'''
