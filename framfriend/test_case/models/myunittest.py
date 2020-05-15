@@ -17,7 +17,6 @@ class MyunitTest(unittest.TestCase):
 
     """
 
-    # add by xuechao at 2018.09.19
     @classmethod
     def setUpClass(cls): # 一个测试类(文件)执行一次打开浏览器, 节约每个用例打开一次浏览器的时间
 
@@ -43,7 +42,6 @@ class MyunitTest(unittest.TestCase):
         self.driver.refresh()
         log.logger.info('************************test case run completed************************')
 
-    # add by linuxchao at 2018.09.19
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
