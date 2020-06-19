@@ -21,9 +21,9 @@ class SendMail(object):
                  receiver,
                  subject='framfriend 系统测试报告',
                  server='smtp.qq.com',
-                 fromuser='996941471@qq.com',
+                 fromuser='******@qq.com',
                  frompassword='yryyintgafnubded',
-                 sender='996941471@qq.com'):
+                 sender='******@qq.com'):
         """
 
         :param receiver:

@@ -38,7 +38,7 @@ class WDriver(object):
             chromeOptions = webdriver.ChromeOptions()
             prefs = {"download.default_directory": "F:\\TestDownloads"}
             chromeOptions.add_experimental_option("prefs", prefs)
-            self.driver = webdriver.Chrome(options=chromeOptions)
+            self.driver = webdriver.Chrome(chrome_options=chromeOptions)
             time.sleep(10)
 
         except Exception as e:

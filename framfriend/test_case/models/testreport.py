@@ -65,5 +65,5 @@ def runTc(discover):
 
 if __name__ == '__main__':
     testreport()
-    suite = addTc(rule = '*TC.py')
+    suite = addTc(rule = 'LoginTC.py')
     runTc(suite)

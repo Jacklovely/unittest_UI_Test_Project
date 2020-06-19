@@ -14,6 +14,7 @@ from framfriend.test_case.models.sendmail import SendMail, getReceiverInfo
 from framfriend.test_case.models.testreport import testreport
 
 # TODO : will be use jenkins continuous intergration teachnology manage the auto project
+
 if __name__ == '__main__':
 
     # currTime = time.strftime('%Y-%m-%d %H_%M_%S')

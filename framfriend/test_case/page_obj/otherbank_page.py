@@ -23,7 +23,7 @@ class OtherBank_Page(BasePage):
     # 设置与维护
     set = (By.XPATH, '//*[@id="sidebarTree_33"]')
     # 设置与维护列表
-    setul = (By.XPATH, '//*[@id="sidebarTree_33_ul"]')
+    setul = (By.XPATH, '//*[@id="sidebarTree_36_ul"]')
     # 对方银行
     otherBank = (By.XPATH, eleData.readExcel(234, 3))
     # 对方银行设置页面
@@ -36,11 +36,11 @@ class OtherBank_Page(BasePage):
                   queryData.readExcel(19, 1), queryData.readExcel(20, 1)]
     #输入框
     input_list = \
-        [(By.XPATH, eleData.readExcel(383, 3)),#银行名称（新增，修改）0
-         (By.XPATH, eleData.readExcel(384, 3)),#户名（新增,修改）1
-         (By.XPATH, eleData.readExcel(385, 3)),#开户机构（新增，修改）2
-         (By.XPATH, eleData.readExcel(386, 3)),#账户号码（新增，修改）3
-         (By.XPATH, eleData.readExcel(387, 3)),#子账户客户号（新增，修改）4
+        [(By.XPATH, '//*[@id="defaultForm"]/div[1]/div/input'),#银行名称（新增，修改）0
+         (By.XPATH, '//*[@id="defaultForm"]/div[2]/div/input'),#户名（新增,修改）1
+         (By.XPATH, '//*[@id="defaultForm"]/div[3]/div/input'),#开户机构（新增，修改）2
+         (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/input'),#账户号码（新增，修改）3
+         (By.XPATH, '//*[@id="transaction_type_select"]'),#联行号（新增，修改）4
          (By.XPATH, eleData.readExcel(423, 3)),#短信接收人（新增）5
          (By.XPATH, eleData.readExcel(424, 3)),#短信接收人手机号（新增）6
          (By.XPATH, eleData.readExcel(425, 3)),#联行号（新增，修改)7
@@ -74,20 +74,21 @@ class OtherBank_Page(BasePage):
          [(By.XPATH, eleData.readExcel(410, 3)),  #右上角验证0
           (By.XPATH, eleData.readExcel(411, 3)),  #新增窗口验证1
           (By.XPATH, eleData.readExcel(412, 3)),  #银行名称为空提示（新增，修改）2
-          (By.XPATH, eleData.readExcel(413, 3)),  #户名为空提示（新增，修改）3
-          (By.XPATH, eleData.readExcel(414, 3)),  #开户机构为空验证（新增，修改）4
-          (By.XPATH, eleData.readExcel(426, 3)),  #短信接收人为空验证（新增）5
-          (By.XPATH, eleData.readExcel(427, 3)),  #短信接收人手机号为空验证（新增）6
-          (By.XPATH, eleData.readExcel(417, 3)),  #联行号为空验证（新增）7
+          (By.XPATH, '//*[@id="defaultForm"]/div[2]/div/small'),  #户名为空提示（新增，修改）3
+          (By.XPATH, '//*[@id="defaultForm"]/div[3]/div/small'),  #开户机构为空验证（新增，修改）4
+          (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/small[1]'),  #账号为空验证（新增）5
+          (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/small[2]'),  #账号不规则（新增）6
+          (By.XPATH, '//*[@id="defaultForm"]/div[5]/div/small'),  #联行号不规则验证（新增）7
           (By.XPATH, eleData.readExcel(418, 3)),  #短信接收人为空验证(修改）8
           (By.XPATH, eleData.readExcel(419, 3)),  #短信接收人手机号为空验证（修改）9
           (By.XPATH, eleData.readExcel(420, 3)),  #修改窗口验证10
           (By.XPATH, eleData.readExcel(421, 3)),  #删除窗口验证11
           (By.XPATH, eleData.readExcel(422, 3)),  #查询验证12
           (By.XPATH, '/html/body/div[5]'),  # 删除提示13
-          (By.XPATH, '/html/body/div[6]')]  # 重复验证提示14
-    # 测试数据
-    valueList = ['981637672804', '15864901222','测试银行']
+          (By.XPATH, '/html/body/div[6]'), # 重复验证提示14
+          (By.XPATH, '//*[@id="mychart4"]/tbody')] #15
+          # 测试数据
+    valueList = ['981637672804', '15864901222','测试银行','无相关查询数据','不能为空']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
 
     def InotherBankpage(self):
@@ -99,10 +100,10 @@ class OtherBank_Page(BasePage):
         leftMenu.find_element_by_id('sidebarTree_23_a').click()  # 点击银农直联系统
         time.sleep(1)
         Silverfarmersul = self.findElement(*self.Silverfarmersul)
-        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_33"]').click()  # 点击设置与维护
+        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_36"]').click()  # 点击设置与维护
         time.sleep(1)
         payul = self.findElement(*self.setul)
-        payul.find_element_by_id('sidebarTree_35').click()  # 点击对方银行设置
+        payul.find_element_by_id('sidebarTree_38').click()  # 点击对方银行设置
         time.sleep(1)
         log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
             sys._getframe().f_code.co_name, self.menuList[0], self.setul))

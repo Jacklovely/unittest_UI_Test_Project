@@ -65,6 +65,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 # URL: http://tungwaiyip.info/software/HTMLTestRunner.html
+import io
 
 __author__ = "qiu shui,  秋水"
 __version__ = "0.8.3"
@@ -507,6 +508,8 @@ class _TestResult(TestResult):
         self.result = []
         #增加一个测试通过率 --Findyou
         self.passrate=float(0)
+        self.outputBuffer = io.StringIO()
+        self.test_start_time = round(time.time(), 2)
 
 
     def startTest(self, test):

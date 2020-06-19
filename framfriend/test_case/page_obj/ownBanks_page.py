@@ -21,16 +21,16 @@ class OwnBanks_Page(BasePage):
     # 银农直联列表
     Silverfarmersul = (By.XPATH, '//*[@id="sidebarTree_23_ul"]')
     # 设置与维护
-    set = (By.XPATH, '//*[@id="sidebarTree_33"]')
+    set = (By.XPATH, '//*[@id="sidebarTree_36"]')
     # 设置与维护列表
-    setul = (By.XPATH, '//*[@id="sidebarTree_33_ul"]')
+    setul = (By.XPATH, '//*[@id="sidebarTree_36_ul"]')
     # 己方银行
     ownBanks = (By.XPATH, eleData.readExcel(233, 3))
     # 己方银行设置页面
     ownBankspage = (By.XPATH, eleData.readExcel(378, 3))
     # 查询条件 开户机构,户名,账号,银行名称
     query_list = [(By.XPATH, eleData.readExcel(379, 3)), (By.XPATH, eleData.readExcel(380, 3)),
-                  (By.XPATH, eleData.readExcel(381, 3)),(By.XPATH, eleData.readExcel(382, 3))]
+                  (By.XPATH, eleData.readExcel(381, 3))]
     # 查询数据
     valuesList = [queryData.readExcel(13, 1), queryData.readExcel(14, 1),
                   queryData.readExcel(15, 1), queryData.readExcel(16, 1)]
@@ -76,7 +76,7 @@ class OwnBanks_Page(BasePage):
           (By.XPATH, eleData.readExcel(414, 3)),#开户机构为空验证（新增，修改）4
           (By.XPATH, eleData.readExcel(415, 3)),#短信接收人为空验证（新增）5
           (By.XPATH, eleData.readExcel(416, 3)),#短信接收人手机号为空验证（新增）6
-          (By.XPATH, eleData.readExcel(417, 3)),#联行号为空验证（新增）7
+          (By.XPATH, eleData.readExcel(417, 3)),#账号为空验证（新增）7
           (By.XPATH, eleData.readExcel(418, 3)),#短信接收人为空验证(修改）8
           (By.XPATH, eleData.readExcel(419, 3)),#短信接收人手机号为空验证（修改）9
           (By.XPATH, eleData.readExcel(420, 3)),#修改窗口验证10
@@ -84,9 +84,13 @@ class OwnBanks_Page(BasePage):
           (By.XPATH, eleData.readExcel(422, 3)),#查询验证12
           (By.XPATH, '//*[@id="defaultForm"]/div[9]/div/small[2]'),#不规则联行号验证13
           (By.XPATH, '/html/body/div[5]'), #删除提示14
-          (By.XPATH, '/html/body/div[6]')]  # 重复验证提示15
+          (By.XPATH, '/html/body/div[6]'),  # 重复验证提示15
+          (By.XPATH, '//*[@id="container-fluid"]/div[1]/div/div/div[2]/div[1]/div[2]/div[4]/div[1]/span[1]'),#16查询为空
+          (By.XPATH, '//*[@id="defaultForm"]/div[3]/div/small[2]')]#17账号不规则
     # 测试数据
-    valueList = ['981637672804', '15864901222','测试银行']
+    valueList = ['城南支行', '2100011204205000010340','淄博市淄川区将军路街道查王村股份经济合作社',
+                '总共 0 条记录','不能为空','13964168531','新增成功','淄博市淄川区将军路街道贾官村股份经济合作社',
+                 '账户已存在','请选中一项内容','请选中一项内容进行操作','修改成功','请输入有效的数字','删除成功']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
     def InownBankspage(self):
         '''
@@ -97,10 +101,10 @@ class OwnBanks_Page(BasePage):
         leftMenu.find_element_by_id('sidebarTree_23_a').click()  # 点击银农直联系统
         time.sleep(1)
         Silverfarmersul = self.findElement(*self.Silverfarmersul)
-        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_33"]').click()  # 点击设置与维护
+        Silverfarmersul.find_element_by_xpath('//*[@id="sidebarTree_36_a"]').click()  # 点击设置与维护
         time.sleep(1)
         payul = self.findElement(*self.setul)
-        payul.find_element_by_id('sidebarTree_34').click()  # 点击己方银行设置
+        payul.find_element_by_id('sidebarTree_37').click()  # 点击己方银行设置
         time.sleep(1)
         log.logger.info('page[%s] :found the menu [%s] and [%s]' % (
             sys._getframe().f_code.co_name, self.menuList[0], self.setul))
