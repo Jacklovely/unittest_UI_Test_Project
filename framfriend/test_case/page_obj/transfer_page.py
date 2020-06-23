@@ -58,7 +58,9 @@ class Transfer_Page(BasePage):
          (By.ID, eleData.readExcel(320, 3)),#导入数据（提交）17
          (By.ID, eleData.readExcel(321, 3)),#导入数据（取消）18
          (By.XPATH, eleData.readExcel(322, 3)),#确定支付（关闭）19
-         (By.XPATH, eleData.readExcel(323, 3))]#确定支付（确定）20
+         (By.XPATH, eleData.readExcel(323, 3)),#确定支付（确定）20
+         (By.XPATH, '//*[@id="searchForm"]/div[1]/div/button'),#己方户名21
+         (By.XPATH, '//*[@id="searchForm"]/div[1]/div/div/ul/li[4]/a')]#己方户名中一项22
     #验证
     msg_list = \
         [(By.XPATH, eleData.readExcel(324, 3)),#银行存款为空验证0
@@ -78,7 +80,8 @@ class Transfer_Page(BasePage):
          (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/small[1]'),#修改账号为空14
          (By.XPATH, '//*[@id="defaultForm"]/div[4]/div/small[2]'),#修改输入错误账号15
          (By.XPATH, '/html/body/div[5]'),#删除验证16
-         (By.XPATH, '//*[@id="confirmPayPw"]/div/div')]#关闭转账验证17
+         (By.XPATH, '//*[@id="confirmPayPw"]/div/div'),#关闭转账验证17
+         (By.XPATH, '//*[@id="container-fluid"]/div[1]/div/div/div[2]/div[1]/div[2]/div[4]/div[1]/span[1]')]#18
     #选框
     checkbox_list = \
         [(By.XPATH, eleData.readExcel(338, 3)),#全选框0
@@ -90,7 +93,8 @@ class Transfer_Page(BasePage):
     # 查询数据
     valuesList = [queryData.readExcel(7, 1), int(queryData.readExcel(8, 1)), queryData.readExcel(9, 1)]
     #测试数据
-    valueList = ['test', '123456789123456', '1','123594422111','123456']
+    valueList = ['test', '123456789123456', '1','123594422111','123456','不能为空','请输入有效的数字','新增成功',
+    '请选中一项内容','请选中一项内容进行修改','修改成功','导入数据','删除成功','导入成功','总共 3 条记录']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
 
     def intransfer(self):

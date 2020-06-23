@@ -28,7 +28,7 @@ class IntegratedQuery_Page(BasePage):
     IntegratedQuery = (By.XPATH, eleData.readExcel(228, 3))
     # 转账查询页面
     IntegratedQuerypage = (By.XPATH, eleData.readExcel(342, 3))
-    # 查询条件 己方银行,对方银行,摘要
+    # 查询条件 对方银行,摘要
     query_list = [(By.XPATH, eleData.readExcel(343, 3)), (By.XPATH, eleData.readExcel(344, 3)),
                   (By.XPATH, eleData.readExcel(345, 3))]
     # 查询数据
@@ -44,7 +44,9 @@ class IntegratedQuery_Page(BasePage):
          (By.XPATH, eleData.readExcel(352, 3)),#选择日6
          (By.XPATH, eleData.readExcel(353, 3)),#确定7
          (By.XPATH, eleData.readExcel(354, 3)),#现在8
-         (By.XPATH, eleData.readExcel(355, 3))]#清空9
+         (By.XPATH, eleData.readExcel(355, 3)),#清空9
+         (By.XPATH, '//*[@id="searchForm"]/div[1]/div/button'),#己方户名10
+         (By.XPATH, '//*[@id="searchForm"]/div[1]/div/div/ul/li[4]/a')]#己方户名中一项11
     # 选框
     checkbox_list = \
         [(By.XPATH, eleData.readExcel(356, 3)),  # 选择一项0
@@ -55,10 +57,11 @@ class IntegratedQuery_Page(BasePage):
          (By.XPATH, eleData.readExcel(359, 3)),#时间查询验证
          (By.XPATH, eleData.readExcel(360, 3))]#打印验证
     #数据后打印按钮
-    dataprint = (By.XPATH, '//*[@id="mychart4"]/tbody/tr[1]/td[13]/a')
+    dataprint = (By.XPATH, '//*[@id="mychart4"]/tbody/tr[1]/td[14]/a')
     # 数据后刷新按钮
     datarefresh = (By.XPATH, '//*[@id="mychart4"]/tbody/tr[1]/td[15]/a')
-
+    check_list = ['总共 264 条记录','总共 61 条记录','总共 56 条记录','总共 0 条记录','总共 84 条记录',
+                  '总共 920 条记录','总共 3600 条记录','总共 222 条记录']
     def inIntegratedQuery(self):
         '''
         进入转账查询页面

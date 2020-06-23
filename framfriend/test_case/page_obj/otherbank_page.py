@@ -88,7 +88,8 @@ class OtherBank_Page(BasePage):
           (By.XPATH, '/html/body/div[6]'), # 重复验证提示14
           (By.XPATH, '//*[@id="mychart4"]/tbody')] #15
           # 测试数据
-    valueList = ['981637672804', '15864901222','测试银行','无相关查询数据','不能为空']
+    valueList = ['981637672804', '15864901222','测试银行','无相关查询数据','不能为空','请输入有效的数字','新增成功',
+                 '测试户名','该银行账户已存在','请选中一项内容','请选中一项内容进行操作','修改成功','删除成功']
     reason = time.strftime('%Y-%m-%d:%H-%M-%S') + '测试'
 
     def InotherBankpage(self):

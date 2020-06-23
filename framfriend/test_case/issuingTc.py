@@ -14,7 +14,7 @@ from framfriend.test_case.page_obj.issuing_page import Issuing_Page
 class Issuing_Tc(MyunitTest):
     '''母子代付模块用例'''
     def test_singlePay_1(self):
-        '''正确条件己方银行查询'''
+        '''正确条件己方户名查询'''
         menu = Issuing_Page(self.driver)  # 实例化母子代付页面
         self.login.loginFunc()  # 登录
         menu.inissuing() # 进入母子代付页面
@@ -119,13 +119,13 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[3])#点击新增按钮
         menu.cBtn(menu.button_list[10])#点击提交
         msg9_1 = menu.getValue(*menu.msg_list[8])
-        self.assertIn('不能为空', msg9_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg9_1, '提示信息正确')
         msg9_2 = menu.getValue(*menu.msg_list[9])
-        self.assertIn('不能为空', msg9_2, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg9_2, '提示信息正确')
         msg9_3 = menu.getValue(*menu.msg_list[10])
-        self.assertIn('请输入有效的数字', msg9_3, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg9_3, '提示信息正确')
         msg9_4 = menu.getValue(*menu.msg_list[11])
-        self.assertIn('不能为空', msg9_4, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg9_4, '提示信息正确')
 
     def test_singlePay_10(self):
         '''不选择银行新增'''
@@ -146,7 +146,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])#提交
         time.sleep(1)
         msg10_1 = menu.getValue(*menu.msg_list[8])
-        self.assertIn('不能为空', msg10_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg10_1, '提示信息正确')
 
     def test_singlePay_11(self):
         '''不输入收款人新增'''
@@ -169,7 +169,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg11_1 = menu.getValue(*menu.msg_list[9])
-        self.assertIn('不能为空', msg11_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg11_1, '提示信息正确')
 
     def test_singlePay_12(self):
         '''不输入金额新增'''
@@ -192,7 +192,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg12_1 = menu.getValue(*menu.msg_list[10])
-        self.assertIn('请输入有效的数字', msg12_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg12_1, '提示信息正确')
 
     def test_singlePay_13(self):
         '''不输入摘要新增'''
@@ -215,7 +215,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg13_1 = menu.getValue(*menu.msg_list[11])
-        self.assertIn('不能为空', msg13_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg13_1, '提示信息正确')
 
     def test_singlePay_14(self):
         '''输入不规则账号新增'''
@@ -238,7 +238,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg14_1 = menu.getValue(*menu.msg_list[15])
-        self.assertIn('请输入有效的数字', msg14_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg14_1, '提示信息正确')
 
     def test_singlePay_15(self):
         '''输入不规则金额新增'''
@@ -261,7 +261,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg15_1 = menu.getValue(*menu.msg_list[10])
-        self.assertIn('请输入有效的数字', msg15_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg15_1, '提示信息正确')
 
     def test_singlePay_16(self):
         '''新增代付'''
@@ -284,7 +284,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[10])  # 提交
         time.sleep(1)
         msg16_1 = menu.getValue(*menu.msg_list[0])
-        self.assertIn('新增成功', msg16_1, '提示信息正确')
+        self.assertIn(menu.valueList[9], msg16_1, '提示信息正确')
 
     def test_singlePay_17(self):
         '''取消新增代付'''
@@ -307,7 +307,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[2])  # 点击批量代付
         menu.cBtn(menu.button_list[4])  # 点击修改按钮
         msg18_1 = menu.getValue(*menu.msg_list[0])
-        self.assertIn('请选中一项内容', msg18_1, '提示信息正确')
+        self.assertIn(menu.valueList[10], msg18_1, '提示信息正确')
 
     def test_singlePay_19(self):
         '''全选点击修改'''
@@ -319,7 +319,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.input_list[7]) #全选
         menu.cBtn(menu.button_list[4])  # 点击修改按钮
         msg19_1 = menu.getValue(*menu.msg_list[0])
-        self.assertIn('请选中一项内容进行修改', msg19_1, '提示信息正确')
+        self.assertIn(menu.valueList[11], msg19_1, '提示信息正确')
 
     def test_singlePay_20(self):
         '''一项点击修改'''
@@ -351,11 +351,11 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[13])#提交
         time.sleep(1)
         msg21_1 = menu.getValue(*menu.msg_list[9])
-        self.assertIn('不能为空', msg21_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg21_1, '提示信息正确')
         msg21_2 = menu.getValue(*menu.msg_list[12])
-        self.assertIn('不能为空', msg21_2, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg21_2, '提示信息正确')
         msg21_3 = menu.getValue(*menu.msg_list[13])
-        self.assertIn('请输入有效的数字', msg21_3, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg21_3, '提示信息正确')
 
     def test_singlePay_22(self):
         '''修改清空收款人提交'''
@@ -371,7 +371,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[13])#提交
         time.sleep(1)
         msg22_1 = menu.getValue(*menu.msg_list[9])
-        self.assertIn('不能为空', msg22_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg22_1, '提示信息正确')
 
     def test_singlePay_23(self):
         '''修改清空账号提交'''
@@ -387,7 +387,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[13])#提交
         time.sleep(1)
         msg23_1 = menu.getValue(*menu.msg_list[12])
-        self.assertIn('不能为空', msg23_1, '提示信息正确')
+        self.assertIn(menu.valueList[7], msg23_1, '提示信息正确')
 
     def test_singlePay_24(self):
         '''修改清空金额提交'''
@@ -403,7 +403,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[13])#提交
         time.sleep(1)
         msg24_1 = menu.getValue(*menu.msg_list[13])
-        self.assertIn('请输入有效的数字', msg24_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg24_1, '提示信息正确')
 
     def test_singlePay_25(self):
         '''修改转出银行'''
@@ -419,7 +419,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[22])
         menu.cBtn(menu.button_list[13])#提交
         msg25_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功',msg25_1,'提示信息正确')
+        self.assertIn(menu.valueList[12],msg25_1,'提示信息正确')
 
     def test_singlePay_26(self):
         '''修改收款人'''
@@ -434,9 +434,9 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[3],menu.valueList[0])
         menu.cBtn(menu.button_list[13])#提交
         msg26_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功',msg26_1,'提示信息正确')
+        self.assertIn(menu.valueList[12],msg26_1,'提示信息正确')
         msg26_2 = menu.getValue(*menu.msg_list[1])
-        self.assertIn('测试',msg26_2,'提示信息正确')
+        self.assertIn(menu.valueList[13],msg26_2,'提示信息正确')
 
     def test_singlePay_27(self):
         '''修改收款账号'''
@@ -451,10 +451,10 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[4], menu.valueList[1])
         menu.cBtn(menu.button_list[13])  # 提交
         msg27_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功', msg27_1, '提示信息正确')
+        self.assertIn(menu.valueList[12], msg27_1, '提示信息正确')
         time.sleep(1)
         msg27_2 = menu.getValue(*menu.msg_list[1])
-        self.assertIn('98032230389911653019', msg27_2, '提示信息正确')
+        self.assertIn(menu.valueList[14], msg27_2, '提示信息正确')
 
     def test_singlePay_28(self):
         '''修改收款金额'''
@@ -469,7 +469,7 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[5], menu.valueList[6])
         menu.cBtn(menu.button_list[13])  # 提交
         msg28_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功', msg28_1, '提示信息正确')
+        self.assertIn(menu.valueList[12], msg28_1, '提示信息正确')
 
     def test_singlePay_29(self):
         '''修改不规则收款账号'''
@@ -484,7 +484,7 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[4], menu.valueList[0])
         menu.cBtn(menu.button_list[13])  # 提交
         msg29_1 = menu.getValue(*menu.msg_list[14])
-        self.assertIn('请输入有效的数字', msg29_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg29_1, '提示信息正确')
 
     def test_singlePay_30(self):
         '''修改不规则金额'''
@@ -499,7 +499,7 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[5], menu.valueList[0])
         menu.cBtn(menu.button_list[13])  # 提交
         msg30_1 = menu.getValue(*menu.msg_list[13])
-        self.assertIn('请输入有效的数字', msg30_1, '提示信息正确')
+        self.assertIn(menu.valueList[8], msg30_1, '提示信息正确')
 
     def test_singlePay_31(self):
         '''修改摘要'''
@@ -514,9 +514,9 @@ class Issuing_Tc(MyunitTest):
         menu.inputValue(menu.input_list[6], menu.reason)
         menu.cBtn(menu.button_list[13])  # 提交
         msg31_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功', msg31_1, '提示信息正确')
+        self.assertIn(menu.valueList[12], msg31_1, '提示信息正确')
         msg31_2 = menu.getValue(*menu.msg_list[1])
-        self.assertIn('2020-04-03测试',msg31_2,'提示信息正确')
+        self.assertIn(menu.valueList[15],msg31_2,'提示信息正确')
 
     def test_singlePay_32(self):
         '''修改折卡'''
@@ -532,9 +532,9 @@ class Issuing_Tc(MyunitTest):
         Select(card).select_by_value('P')  # 获取下拉选
         menu.cBtn(menu.button_list[13])  # 提交
         msg32_1 = menu.getValue(*menu.msg_list[16])
-        self.assertIn('修改成功', msg32_1, '提示信息正确')
+        self.assertIn(menu.valueList[12], msg32_1, '提示信息正确')
         msg32_2 = menu.getValue(*menu.msg_list[1])
-        self.assertIn('折(P)', msg32_2, '提示信息正确')
+        self.assertIn(menu.valueList[16], msg32_2, '提示信息正确')
 
     def test_singlePay_33(self):
         '''取消修改'''
@@ -560,7 +560,7 @@ class Issuing_Tc(MyunitTest):
         time.sleep(1)
         menu.cBtn(menu.button_list[5]) #点击删除
         msg34_1 = menu.getValue(*menu.msg_list[0])
-        self.assertIn('请选中一项内容', msg34_1, '提示信息正确')
+        self.assertIn(menu.valueList[10], msg34_1, '提示信息正确')
 
     def test_singlePay_35(self):
         '''一项点击删除'''
@@ -636,7 +636,7 @@ class Issuing_Tc(MyunitTest):
         menu.uploadfalse()
         menu.cBtn(menu.button_list[17])  # 点击提交
         msgInfo = menu.getValue(*menu.msg_list[17])
-        self.assertIn('导入失败', msgInfo, '提示导入失败，停留在导入窗口')
+        self.assertIn(menu.valueList[17], msgInfo, '提示导入失败，停留在导入窗口')
 
     def test_singlePay_41(self):
         '''为空数据导入'''
@@ -649,7 +649,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[6])  # 点击数据导入
         menu.cBtn(menu.button_list[17])  # 点击提交
         msgInfo = menu.getValue(*menu.msg_list[17])
-        self.assertIn('导入失败', msgInfo, '提示导入失败，停留在导入窗口')
+        self.assertIn(menu.valueList[17], msgInfo, '提示导入失败，停留在导入窗口')
 
     def test_singlePay_42(self):
         '''正确数据导入'''
@@ -664,7 +664,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[17])  # 点击提交
         time.sleep(2)
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertIn('导入成功', msgInfo, '提示信息正确')
+        self.assertIn(menu.valueList[18], msgInfo, '提示信息正确')
 
     def test_singlePay_43(self):
         '''点击批量代付'''
@@ -676,7 +676,7 @@ class Issuing_Tc(MyunitTest):
         time.sleep(1)
         menu.cBtn(menu.button_list[7])  # 点击批量代付
         msgInfo = menu.getValue(*menu.msg_list[0])
-        self.assertIn('请选中一项内容', msgInfo, '提示信息正确')
+        self.assertIn(menu.valueList[10], msgInfo, '提示信息正确')
 
     def test_singlePay_44(self):
         '''一项点击批量代付'''
@@ -707,7 +707,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[20])#确定支付
         time.sleep(2)
         msgInfo = menu.getValue(*menu.msg_list[16])
-        self.assertIn('密码输入错误', msgInfo, '提示信息正确')
+        self.assertIn(menu.valueList[19], msgInfo, '提示信息正确')
 
     def test_singlePay_46(self):
         '''正确密码支付'''
@@ -724,7 +724,7 @@ class Issuing_Tc(MyunitTest):
         menu.cBtn(menu.button_list[20])#确定支付
         time.sleep(2)
         msgInfo = menu.getValue(*menu.msg_list[16])
-        self.assertIn('代付成功', msgInfo, '提示信息正确')
+        self.assertIn(menu.valueList[20], msgInfo, '提示信息正确')
 
     def test_singlePay_47(self):
         '''取消密码支付'''

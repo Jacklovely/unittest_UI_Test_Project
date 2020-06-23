@@ -5,14 +5,17 @@ Developer：
 '''
 import os
 import time
+import logging
+from framfriend.test_case.models.log import Logger
 from framfriend.test_case.models.myunittest import MyunitTest
 from framfriend.test_case.page_obj.transfer_page import Transfer_Page
 
+log = Logger(__name__, CmdLevel=logging.INFO, FileLevel=logging.INFO)
 class Transfer_Tc(MyunitTest):
     '''批量转账模块用例'''
 
     def test_alone_query(self):
-        """按户名,账号，开户机构单一条件查询"""
+        """按对方户名,账号，开户机构单一条件查询"""
         menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
@@ -27,14 +30,26 @@ class Transfer_Tc(MyunitTest):
                 try:
                     self.assertIn('黄岛一', flag, '查询成功')
                 except Exception:
-                    self.assertNotIn('黄岛一', flag, '查询条件无效')
+                    log.logger.info('查询条件无效')
+
+    def test_query_2(self):
+        """按己方户名条件查询"""
+        menu = Transfer_Page(self.driver)  # 实例化批量转账页面
+        self.login.loginFunc()  # 登录
+        menu.intransfer()  # 进入批量转账页面
+        time.sleep(3)
+        menu.cBtn(menu.button_list[21])
+        menu.cBtn(menu.button_list[22])
+        menu.cBtn(menu.button_list[0])  # 点击[查询]
+        msgInfo = menu.getValue(*menu.msg_list[18])
+        self.assertIn(menu.valueList[14],msgInfo,'提示信息正确')
 
     def test_add_1(self):
         """点击新增按钮"""
         menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
-        time.sleep(3)
+        time.sleep(2)
         menu.cBtn(menu.button_list[1])#点击新增按钮
         msg = menu.isElementExist(menu.msg_list[9])
         self.assertTrue(msg,'弹出新增窗口')
@@ -51,30 +66,30 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag,'出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[0])
-            self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[5], '提示信息正确')
         flag2 = menu.isElementExist(menu.msg_list[1])
         self.assertTrue(flag2,'出现提示信息')
         if flag2:
             msgInfo2 = menu.getValue(*menu.msg_list[1])
-            self.assertEqual(msgInfo2,'不能为空','提示信息正确')
+            self.assertEqual(msgInfo2,menu.valueList[5],'提示信息正确')
         flag3 = menu.isElementExist(menu.msg_list[6])
         self.assertTrue(flag3, '出现提示信息')
         if flag3:
             msgInfo3 = menu.getValue(*menu.msg_list[6])
-            self.assertEqual(msgInfo3, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo3,menu.valueList[6], '提示信息正确')
         flag4 = menu.isElementExist(menu.msg_list[3])
         self.assertTrue(flag4,'出现提示信息')
         if flag4:
             msgInfo4 = menu.getValue(*menu.msg_list[3])
-            self.assertEqual(msgInfo4,'不能为空','提示信息正确')
+            self.assertEqual(msgInfo4,menu.valueList[5],'提示信息正确')
         flag6 = menu.isElementExist(menu.msg_list[5])
         self.assertTrue(flag6, '出现提示信息')
         if flag4:
             msgInfo6 = menu.getValue(*menu.msg_list[5])
-            self.assertEqual(msgInfo6, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo6,menu.valueList[5], '提示信息正确')
 
     def test_add_3(self):
-        '''不选择银行提交'''
+        '''不选择户名提交'''
         menu = Transfer_Page(self.driver)  # 实例化批量转账页面
         self.login.loginFunc()  # 登录
         menu.intransfer()  # 进入批量转账页面
@@ -92,7 +107,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[0])
-            self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[5], '提示信息正确')
 
     def test_add_4(self):
         '''不输入对方户名'''
@@ -114,7 +129,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[1])
-            self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[5], '提示信息正确')
 
     def test_add_6(self):
         '''不输入备注'''
@@ -136,7 +151,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[3])
-            self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[5],'提示信息正确')
 
     def test_add_7(self):
         '''不输入金额'''
@@ -158,7 +173,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[6])
-            self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[6], '提示信息正确')
 
     def test_add_8(self):
         '''不输入开户机构'''
@@ -180,7 +195,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[5])
-            self.assertEqual(msgInfo, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[5], '提示信息正确')
 
     def test_add_9(self):
         '''输入错误账号'''
@@ -190,7 +205,7 @@ class Transfer_Tc(MyunitTest):
         time.sleep(3)
         menu.cBtn(menu.button_list[1])  # 点击新增按钮
         menu.cBtn(menu.button_list[7])
-        menu.cBtn(menu.button_list[8])  # 选择银行
+        menu.cBtn(menu.button_list[8])  # 选择户名
         menu.inputValue(menu.input_list[0], menu.reason)  # 输入对方户名
         menu.inputValue(menu.input_list[1], menu.reason)  # 输入错误账号
         menu.inputValue(menu.input_list[2], menu.valueList[2])  # 输入金额
@@ -204,7 +219,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[2])
-            self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo,menu.valueList[6], '提示信息正确')
 
     def test_add_10(self):
         '''输入错误联行号'''
@@ -214,7 +229,7 @@ class Transfer_Tc(MyunitTest):
         time.sleep(3)
         menu.cBtn(menu.button_list[1])  # 点击新增按钮
         menu.cBtn(menu.button_list[7])
-        menu.cBtn(menu.button_list[8])  # 选择银行
+        menu.cBtn(menu.button_list[8])  # 选择户名
         menu.inputValue(menu.input_list[0], menu.reason)  # 输入对方户名
         menu.inputValue(menu.input_list[1], menu.valueList[1])  # 输入账号
         menu.inputValue(menu.input_list[2], menu.valueList[2])  # 输入金额
@@ -227,7 +242,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[4])
-            self.assertEqual(msgInfo, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo, menu.valueList[6], '提示信息正确')
 
     def test_add_11(self):
         '''点击新增取消按钮'''
@@ -249,7 +264,7 @@ class Transfer_Tc(MyunitTest):
         time.sleep(3)
         menu.cBtn(menu.button_list[1])  # 点击新增按钮
         menu.cBtn(menu.button_list[7])
-        menu.cBtn(menu.button_list[8])  # 选择银行
+        menu.cBtn(menu.button_list[8])  # 选择户名
         menu.inputValue(menu.input_list[0], menu.reason)  # 输入对方户名
         menu.inputValue(menu.input_list[1], menu.valueList[1])  # 输入账号
         menu.inputValue(menu.input_list[2], menu.valueList[2])  # 输入金额
@@ -262,7 +277,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '出现提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo, '×\n提示! 新增成功！', '提示信息正确')
+            self.assertIn(menu.valueList[7],msgInfo, '提示信息正确')
 
     def test_update_1(self):
         '''点击修改验证'''
@@ -275,7 +290,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo,'×\n提示! 请选中一项内容','提示信息正确')
+            self.assertIn(menu.valueList[8],msgInfo,'提示信息正确')
 
     def test_update_2(self):
         '''选择多项点击修改验证'''
@@ -289,7 +304,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo,'×\n提示! 请选中一项内容进行修改','提示信息正确')
+            self.assertIn(menu.valueList[9],msgInfo,'提示信息正确')
 
     def test_update_3(self):
         '''选择一项点击修改验证'''
@@ -320,22 +335,22 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[6])
-            self.assertEqual(msgInfo1, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[6], '提示信息正确')
         flag2 = menu.isElementExist(menu.msg_list[1])
         self.assertTrue(flag2, '出现提示信息')
         if flag2:
             msgInfo2 = menu.getValue(*menu.msg_list[1])
-            self.assertEqual(msgInfo2, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo2,menu.valueList[5], '提示信息正确')
         flag3 = menu.isElementExist(menu.msg_list[2])
         self.assertTrue(flag3, '出现提示信息')
         if flag3:
             msgInfo3 = menu.getValue(*menu.msg_list[2])
-            self.assertEqual(msgInfo3, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo3,menu.valueList[5], '提示信息正确')
         flag4 = menu.isElementExist(menu.msg_list[5])
         self.assertTrue(flag4, '出现提示信息')
         if flag4:
             msgInfo4 = menu.getValue(*menu.msg_list[5])
-            self.assertEqual(msgInfo4, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo4,menu.valueList[5], '提示信息正确')
 
     def test_update_5(self):
         '''清空金额提交'''
@@ -352,7 +367,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[6])
-            self.assertEqual(msgInfo1, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[6], '提示信息正确')
 
     def test_update_6(self):
         '''清空对方户名提交'''
@@ -369,7 +384,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[1])
-            self.assertEqual(msgInfo1, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[5], '提示信息正确')
 
     def test_update_6_1(self):
         '''清空对方账号提交'''
@@ -386,7 +401,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[14])
-            self.assertEqual(msgInfo1, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[5], '提示信息正确')
 
     def test_update_6_2(self):
         '''输入错误对方账号提交'''
@@ -403,7 +418,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[15])
-            self.assertEqual(msgInfo1, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[6], '提示信息正确')
 
     def test_update_7(self):
         '''清空开户机构提交'''
@@ -420,7 +435,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[5])
-            self.assertEqual(msgInfo1, '不能为空', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[5], '提示信息正确')
 
     def test_update_8(self):
         '''金额输入非数字提交'''
@@ -436,7 +451,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[6])
-            self.assertEqual(msgInfo1, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo1,menu.valueList[6], '提示信息正确')
 
     def test_update_9(self):
         '''联行号输入非数字提交'''
@@ -452,7 +467,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag1, '出现提示信息')
         if flag1:
             msgInfo1 = menu.getValue(*menu.msg_list[4])
-            self.assertEqual(msgInfo1, '请输入有效的数字', '提示信息正确')
+            self.assertEqual(msgInfo1, menu.valueList[6], '提示信息正确')
 
     def test_update_10(self):
         '''正确修改提交'''
@@ -474,7 +489,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo, '×\n提示! 修改成功！', '提示信息正确')
+            self.assertIn(menu.valueList[10],msgInfo, '提示信息正确')
 
     def test_update_11(self):
         '''点击取消按钮'''
@@ -500,7 +515,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag,'弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo, '×\n提示! 请选中一项内容！', '提示信息正确')
+            self.assertIn(menu.valueList[7],msgInfo, '提示信息正确')
 
     def test_delete_2(self):
         '''选择一项点击删除'''
@@ -512,7 +527,7 @@ class Transfer_Tc(MyunitTest):
         menu.cBtn(menu.button_list[3])#点击删除
         flag = menu.isElementExist(menu.msg_list[11])
         self.assertTrue(flag,'弹出删除窗口')
-    """
+
     def test_delete_3(self):
         '''选择一项点击删除确定'''
         menu = Transfer_Page(self.driver)  # 实例化批量转账页面
@@ -527,8 +542,8 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[16])
-            self.assertEqual(msgInfo, '×\n提示! 删除成功！', '提示信息正确')
-    """
+            self.assertIn(menu.valueList[12],msgInfo, '提示信息正确')
+
     def test_delete_4(self):
         '''选择一项点击删除取消'''
         menu = Transfer_Page(self.driver)  # 实例化批量转账页面
@@ -565,7 +580,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertIn( '导入数据',msgInfo, '提示导入失败，停留在导入窗口')
+            self.assertIn(menu.valueList[11],msgInfo, '提示导入失败，停留在导入窗口')
 
     def test_import_3(self):
         '''上传正确文件验证'''
@@ -581,7 +596,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo, '×\n提示! 导入成功！', '提示信息正确')
+            self.assertIn(menu.valueList[13],msgInfo, '提示信息正确')
 
     def test_import_4(self):
         '''不上传文件提交验证'''
@@ -596,7 +611,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertIn('导入数据', msgInfo, '提示导入失败，停留在导入窗口')
+            self.assertIn(menu.valueList[11], msgInfo, '提示导入失败，停留在导入窗口')
 
     def test_import_5(self):
         '''数据导入点击取消验证'''
@@ -621,7 +636,7 @@ class Transfer_Tc(MyunitTest):
         self.assertTrue(flag, '弹出提示信息')
         if flag:
             msgInfo = menu.getValue(*menu.msg_list[7])
-            self.assertEqual(msgInfo, '×\n提示! 请选中一项内容', '提示信息正确')
+            self.assertIn(menu.valueList[8],msgInfo, '提示信息正确')
 
     def test_transfer_2(self):
         '''选择一项点击批量转账'''
